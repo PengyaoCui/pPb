@@ -99,8 +99,8 @@ void runLocalStrangeJets()
   Bool_t IsUE = 1;
   Bool_t PCL  = 0;
   Bool_t PCU  = 0;
-  Bool_t IsOC = 0;
-  Bool_t IsNJ = 1;
+  Bool_t IsOC = 1;//Reminder: Change the Cone radius
+  Bool_t IsNJ = 0;
 
   Bool_t IsPCLU= (PCL||PCU);
   ana->SetIsInJPCLAna(PCL);
@@ -222,7 +222,7 @@ void runLocalStrangeJets()
             ana->AnaResults(2*0.75*TMath::TwoPi()*0.06);
           }else{
             if(IsPCLU) ana->AnaResults(2*0.75*TMath::TwoPi()*0.12);
-            if(IsOC) ana->AnaResults(2*0.75*TMath::TwoPi()*0.94);
+            if(IsOC) ana->AnaResults(2*0.75*TMath::TwoPi()*0.76);
             if(IsNJ) ana->AnaResults(2*0.75*TMath::TwoPi());
           }
         }
@@ -279,7 +279,7 @@ void runLocalStrangeJets()
         ana->SetDataMakeFdR(sFileMakeLaFdR, Form("%s_%s_%s_%s",slistMakeLaFdR.Data(),sType1.Data(),sFix.Data(), Cent.Data()));
         if(PCL){ana->AnaMakeFdR(hPtXiPCL, hPtXiNegKine, 2*0.75*TMath::TwoPi()*0.12); }
         if(PCU){ana->AnaMakeFdR(hPtXiPCU, hPtXiNegKine, 2*0.75*TMath::TwoPi()*0.12); }
-        if(IsOC){ana->AnaMakeFdR(hPtXiOC, hPtXiNegKine, 2*0.75*TMath::TwoPi()*0.94); }
+        if(IsOC){ana->AnaMakeFdR(hPtXiOC, hPtXiNegKine, 2*0.75*TMath::TwoPi()*0.76); }
         if(IsNJ){ana->AnaMakeFdR(hPtXiNJ, hPtXiNegKine, 2*0.75*TMath::TwoPi()); }
         if(!IsUE){ana->AnaMakeFdRJC(hPtXiJE, hPtXiNegKine, hPtLaJE, 2*0.75*TMath::TwoPi()*0.06);}
       }
@@ -317,7 +317,7 @@ void runLocalStrangeJets()
         ana->SetDataMakeFdR(sFileMakeLaFdR, Form("%s_%s_%s_%s",slistMakeLaFdR.Data(),sType1.Data(),sFix.Data(), Cent.Data()));
         if(PCL){ana->AnaMakeFdR(hPtXiPCL, hPtXiNegKine, 2*0.75*TMath::TwoPi()*0.12); }
         if(PCU){ana->AnaMakeFdR(hPtXiPCU, hPtXiNegKine, 2*0.75*TMath::TwoPi()*0.12); }
-        if(IsOC){ana->AnaMakeFdR(hPtXiOC, hPtXiNegKine, 2*0.75*TMath::TwoPi()*0.94); }
+        if(IsOC){ana->AnaMakeFdR(hPtXiOC, hPtXiNegKine, 2*0.75*TMath::TwoPi()*0.76); }
         if(IsNJ){ana->AnaMakeFdR(hPtXiNJ, hPtXiNegKine, 2*0.75*TMath::TwoPi()); }
         if(!IsUE){ana->AnaMakeFdRJC(hPtXiJE, hPtXiNegKine, hPtLaJE, 2*0.75*TMath::TwoPi()*0.06);}
       }
@@ -397,7 +397,7 @@ Bool_t Config(AliAnalysisTaskUserStraneJets *ana, Double_t dcMin, Double_t dcMax
   ana->SetDefaultOmegaCutsPA();
 
   Double_t dJR = 0.4;
-  Double_t dJC = 0.4;
+  Double_t dJC = 0.4; //ConeRadius
   if (gSystem->Getenv("CONFIG_VAL_JET_RADIUS"))   dJR = atof(gSystem->Getenv("CONFIG_VAL_JET_RADIUS"));//????
   if (gSystem->Getenv("CONFIG_VAL_JET_CONESIZE")) dJC = atof(gSystem->Getenv("CONFIG_VAL_JET_CONESIZE"));
 
