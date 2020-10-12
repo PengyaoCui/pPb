@@ -1,0 +1,235 @@
+#include "./SourceFun.h"
+void ratio_THnSpares3(){
+
+  TString sPeriod[] = {"LHC16k", "LHC16h", "LHC16l"};
+  //TString  Period[] = {"LHC16i4a", "LHC17f5", "LHC16i4b"};
+
+  TString sFile = "AnalysisOutputs_LoopIncMC.root";
+  TString sList = "listLoopIncMC_Xi_Default";
+  
+  //TString sFile = "AnalysisOutputs_Loop1ndRD.root";
+  //TString sList = "listLoop1ndRD_Xi_Default";
+
+  Double_t XMin = 0;
+  Double_t XMax = 4.;
+
+  Double_t binmin = 1.;
+  Double_t binmax = 20.;
+
+  Int_t k = 18; 
+  TString sCut[29];
+  sCut[ 0] = "V0Radius";
+  sCut[ 1] = "V0CPA";
+  sCut[ 2] = "V0DistToPVoverP";
+  sCut[ 3] = "V0DausDCA";
+  sCut[ 4] = "PosDCAtoPV";
+  sCut[ 5] = "NegDCAtoPV";
+  sCut[ 6] = "DauXrowsTPC";
+  sCut[ 7] = "DauXrowsOverFindableClusTPC";
+  sCut[ 8] = "XiPt";
+  sCut[ 9] = "RapidityLa";
+  sCut[10] = "Lambda.M";
+  sCut[11] = "AntiLa.M";
+  sCut[12] = "Pos.Eta";
+  sCut[13] = "Neg.Eta";
+
+  sCut[14] = "XiRadius";
+  sCut[15] = "XiCPA";
+  sCut[16] = "XiDCAtoPV";
+  sCut[17] = "V0toBachDCA";
+  sCut[18] = "V0DCAtoPV";
+  sCut[19] = "BachDCAtoPV";
+  sCut[20] = "BachXrowsTPC";
+  sCut[21] = "BachXrowsOverFindableClusTPC";
+  sCut[22] = "V0.Eta";
+  sCut[23] = "Bach.Eta";
+
+  sCut[24] = "PosPionSigmaTPC";
+  sCut[25] = "PosProtonSigmaTPC";
+  sCut[26] = "NegPionSigmaTPC";
+  sCut[27] = "NegProtonSigmaTPC";
+  sCut[28] = "BachSigmaTPC";
+  
+
+  TString sPath0 = Form("/home/cuipengyao/study/code/Cascade_%s/JC_CombineXi_CorrNormFact", sPeriod[0].Data());
+  TString sPath1 = Form("/home/cuipengyao/study/code/Cascade_%s/JC_CombineXi_CorrNormFact", sPeriod[1].Data());
+  TString sPath2 = Form("/home/cuipengyao/study/code/Cascade_%s/JC_CombineXi_CorrNormFact", sPeriod[2].Data());
+
+  //TFile *f[] = {NULL};
+  //for (Int_t i = 0; i< nPeriod; i++) f[i] = TFile::Open(Form("%s/AnalysisOutputs_Loop1ndRD.root", sPath[i].Data())); 
+
+  TFile     *f0 = TFile::Open(Form("%s/%s", sPath0.Data(), sFile.Data())); 
+  TList *flist0 = (TList *)f0->Get(sList);  
+  THnSparseD *hsCuts0 = (THnSparseD*)flist0->FindObject("hsCutAfter");
+  hsCuts0->SetName("hsCuts0"); 
+  hsCuts0->GetAxis(8)->SetRange( hsCuts0->GetAxis(8)->FindBin(binmin), hsCuts0->GetAxis(8)->FindBin(binmax));
+  f0->Close();
+
+  TFile     *f1 = TFile::Open(Form("%s/%s", sPath1.Data(), sFile.Data())); 
+  TList *flist1 = (TList *)f1->Get(sList);  
+  THnSparseD *hsCuts1 = (THnSparseD*)flist1->FindObject("hsCutAfter");
+  hsCuts1->SetName("hsCuts1"); 
+  //hsCuts1->GetAxis(8)->SetRange(binmin, binmax);
+  hsCuts1->GetAxis(8)->SetRange( hsCuts1->GetAxis(8)->FindBin(binmin), hsCuts1->GetAxis(8)->FindBin(binmax));
+  f1->Close();
+
+  TFile     *f2 = TFile::Open(Form("%s/%s", sPath2.Data(), sFile.Data())); 
+  TList *flist2 = (TList *)f2->Get(sList);  
+  THnSparseD *hsCuts2 = (THnSparseD*)flist2->FindObject("hsCutAfter");
+  hsCuts2->SetName("hsCuts2"); 
+  //hsCuts2->GetAxis(8)->SetRange(binmin, binmax);
+  hsCuts2->GetAxis(8)->SetRange( hsCuts2->GetAxis(8)->FindBin(binmin), hsCuts2->GetAxis(8)->FindBin(binmax));
+  f2->Close();
+
+  TCanvas *c1 = new TCanvas("c1","");
+  SetStyle();
+
+  c1->cd();
+  //TPad *c2_a = new TPad("c2_a", "c2_a", 0., 0.4, 0.9, 1.);
+  //c2_a->SetRightMargin(0.01);
+  //c2_a->SetBorderMode(0);
+  //c2_a->SetBorderSize(2);
+
+  //c2_a->SetBottomMargin(0.0);
+  //c2_a->SetFrameBorderMode(0);
+  //c2_a->SetFrameBorderMode(0);
+  TPad *c2_a = new TPad("c2_a", "c2_a", 0., 0.35, 1., 1.);
+
+  c2_a->SetFillColor(0);
+  c2_a->SetBorderMode(0);
+  c2_a->SetBorderSize(0);
+  c2_a->SetRightMargin(0.03);
+  c2_a->SetLeftMargin(0.13);
+  c2_a->SetTopMargin(0.02);
+  c2_a->SetBottomMargin(0.0);
+  c2_a->SetFrameFillStyle(0);
+  c2_a->SetFrameBorderMode(0);
+
+  c2_a->Draw();
+  c2_a->cd();
+  c2_a->SetLogy();
+
+  TLegend* leg = new TLegend(0.8,0.9,1.0,0.5);
+
+  TH1D *h0 =(TH1D*)hsCuts0->Projection(k);
+  h0->SetName("h0");
+  //h0->Scale(1./2.49632e+08);
+  h0->Rebin(10);
+  for(Int_t i = 0; i<h0->GetNbinsX(); i++){h0->SetBinError(i, TMath::Sqrt(h0->GetBinContent(i)));}
+  h0->Scale(1./(h0->GetEntries()));
+  NormBinSize(h0);
+  SetAxis(h0, 1e-4, 1e1, XMin, XMax, "Ratio");
+
+  h0->GetYaxis()->SetTitleSize(0.06);
+  h0->GetYaxis()->SetTitleOffset(1.);
+  h0->GetXaxis()->SetLabelSize(0.05);
+  h0->GetYaxis()->SetLabelSize(0.06);
+  h0->GetYaxis()->SetTitle("Probability density"); 
+
+  SetLine(h0,cLine[0], sMark[0]);
+  h0->SetTitle("");
+  leg->AddEntry(h0,sPeriod[0],"lp");
+ 
+  TH1D *h1 =(TH1D*)hsCuts1->Projection(k);
+  h1->SetName("h1");
+  h1->Rebin(10);
+  for(Int_t i = 0; i<h1->GetNbinsX(); i++){h1->SetBinError(i, TMath::Sqrt(h1->GetBinContent(i)));}
+  //h1->Scale(1./1.28757e+08 );
+  h1->Scale(1./(h1->GetEntries()));
+  NormBinSize(h1);
+  SetLine(h1,cLine[1], sMark[1]);
+  h1->SetTitle("");
+  leg->AddEntry(h1,sPeriod[1],"lp");
+
+  TH1D *h2 =(TH1D*)hsCuts2->Projection(k);
+  h2->Rebin(10);
+  h2->SetName("h2");
+  for(Int_t i = 0; i<h2->GetNbinsX(); i++){h2->SetBinError(i, TMath::Sqrt(h2->GetBinContent(i)));}
+  //h2->Scale(1./6.72309e+07);
+  h2->Scale(1./(h2->GetEntries()));
+  NormBinSize(h2);
+  SetLine(h2,cLine[2], sMark[2]);
+  h2->SetTitle("");
+  leg->AddEntry(h2,sPeriod[2],"lp");
+
+  h0->Draw("same");
+  h1->Draw("same");
+  h2->Draw("same");
+
+  //SetCanv(c1);
+  SetLegend(leg);
+  leg->Draw();
+  TLatex*     tex = new TLatex();
+  tex->SetNDC();
+  tex->SetTextSizePixels(24);
+  tex->DrawLatex(0.15, 0.9,Form("%s as the reference", sPeriod[0].Data()));
+  tex->DrawLatex(0.15, 0.8,Form("%s distribution in 2<#it{p}_{T}<3(GeV/#it{c})", sCut[k].Data()));
+
+
+  c1->cd();
+  TPad *c2_b = new TPad("c2_b", "c2_b", 0., 0. , 1., 0.35);
+
+  c2_b->SetFillColor(0);
+  c2_b->SetBorderMode(0);
+  c2_b->SetBorderSize(0);
+  c2_b->SetRightMargin(0.03);
+  c2_b->SetLeftMargin(0.13);
+  c2_b->SetTopMargin(0.00);
+  c2_b->SetBottomMargin(0.3);
+  c2_b->SetFrameFillStyle(0);
+  c2_b->SetFrameBorderMode(0);
+  //TPad *c2_b = new TPad("c2_b", "c2_b", 0., 0.05 , 0.9, 0.40);
+  //c2_b->SetTopMargin(0.);
+  //c2_b->SetRightMargin(0.01);
+  //c2_b->SetBottomMargin(0.2);
+  //c2_b->SetFillColor(0);
+  //c2_b->SetBorderMode(0);
+  //c2_b->SetBorderSize(2);
+  //c2_b->SetFrameBorderMode(0);
+  //c2_b->SetFrameBorderMode(0);
+  c2_b->Draw();
+  c2_b->cd();
+
+  TH1D *h_0 = (TH1D*)h0->Clone("h_0");
+  TH1D *h_1 = (TH1D*)h1->Clone("h_1");
+  TH1D *h_2 = (TH1D*)h2->Clone("h_2");
+
+  TH1D* hRatio  =0; 
+  h_1->Divide(h_0);
+  hRatio = h_1;
+  SetAxis(hRatio, 0.5, 1.5, XMin, XMax, "Ratio");
+  hRatio->SetName("Ratio");
+  SetLine(hRatio,cLine[3], sMark[0]);
+  leg->AddEntry(hRatio,Form("%s/%s", sPeriod[1].Data(), sPeriod[0].Data()),"lp");
+  hRatio->Draw("same");
+
+  //TH1D* hRatio0 = (TH1D*)RatioTH1D(h_2, h_1);
+  TH1D* hRatio0  =0; 
+  h_2->Divide(h_0);
+  hRatio0 = h_2;
+  hRatio0->SetName("Ratio0");
+  SetLine(hRatio0,cLine[4], sMark[1]);
+  leg->AddEntry(hRatio0,Form("%s/%s", sPeriod[2].Data(), sPeriod[0].Data()),"lp");
+  //SetAxis(hRatio0, 0.1, 2.5, 0.6, 6., "Ratio");
+  hRatio0->Draw("same");
+
+  hRatio->GetXaxis()->SetTitle(sCut[k]);
+  hRatio->GetYaxis()->SetTitle("Ratio");
+  hRatio->GetXaxis()->SetTitleSize(0.13);
+  hRatio->GetXaxis()->SetLabelSize(0.14);
+  hRatio->GetXaxis()->SetTitleOffset(1.);
+
+  hRatio->GetXaxis()->SetTitleSize(0.13);
+  hRatio->GetYaxis()->SetTitleSize(0.13);
+  hRatio->GetYaxis()->SetLabelSize(0.13);
+  hRatio->GetYaxis()->SetTitleOffset(0.4);
+
+  TLine* l = new TLine(XMin, 1, XMax, 1);
+  l->SetLineColor(kRed);
+  l->SetLineWidth(2);
+  l->Draw("same");
+
+ 
+
+}
+

@@ -1,0 +1,124 @@
+\section{Data Sample}
+
+\begin{itemize}
+\item p--Pb collisions at $\sNN=5.02$~TeV.
+\end{itemize}
+
+\subsection{Data}\label{sec:02DataSample}
+
+\begin{itemize} 
+\item LHC13b pass 3 AOD, $12$ runs:
+      $195344$, $195346$, $195351$, $195389$,
+      $195390$, $195391$, $195478$, $195479$,
+      $195480$, $195481$, $195482$ and $195483$;
+\item LHC13c pass2 AOD, $15$ runs:
+      $195529$, $195531$, $195532$, $195566$, $195567$,
+      $195568$, $195592$, $195593$, $195596$, $195633$,
+      $195635$, $195644$, $195673$, $195675$ and $195677$.
+\end{itemize}
+
+Analysis based on the EMCal jet (JE) framework:
+\begin{itemize}
+\item track filter:
+      \begin{lstlisting}
+$ALICE_ROOOT/PWG/EMCAL/AliEmcalPicoTrackMaker.h(.cxx)
+      \end{lstlisting}
+\item jet finder:
+      \begin{lstlisting}
+$ALICE_ROOOT/PWGJE/EMCALJetTasks/AliEmcalJetTask.h(.cxx)
+      \end{lstlisting}
+\item user analysis task derived from:
+      \begin{lstlisting}
+$ALICE_ROOOT/PWGJE/EMCALJetTasks/AliAnalysisTaskEmcalJet.h(.cxx)
+      \end{lstlisting}
+\end{itemize}
+Events are selected with:
+\begin{itemize}
+\item event trigger: kINT7;
+\item skip first event chunk:
+      \begin{lstlisting}
+Bool_t AliAnalysisUtils::IsFirstEventInChunk(AliVEvent *event)
+      \end{lstlisting}
+\item vertex selecton:
+      \begin{lstlisting}
+Bool_t AliAnalysisUtils::IsVertexSelected2013pA(AliVEvent *event)
+      \end{lstlisting}
+      with number of contributor $>2$ and $v_{\rm z}<10$~cm;
+\item pileup rejection:
+      \begin{lstlisting}
+Bool_t AliAnalysisUtils::IsPileUpEvent(AliVEvent *event)
+      \end{lstlisting}
+      with the default cut values.
+\item centrality QA $=0$, V0A and ZNA are used as the
+      centrality (or event multiplicity) estimators.
+\end{itemize}
+Table~\ref{tab:c02NumSelEvRD} shows the number of selected
+events in $7$ event multiplicity bins.
+
+\begin{table}[htdp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+$0-5\%$ & $5-10\%$ & $10-20\%$ & $20-40\%$ &
+                     $40-60\%$ & $60-80\%$ & $80-100\%$ \\
+\hline
+$xxxxx$ & $xxxxxx$ & $xxxxxxx$ & $xxxxxxx$ &
+                     $xxxxxxx$ & $xxxxxxx$ & $xxxxxxxx$ \\
+\hline
+\end{tabular}
+\end{center}
+\caption{Number of selected events in $7$ event multliplicity bins with
+         V0A centrality estimator in data.}
+\label{tab:c02NumSelEvRD}
+\end{table}
+
+\subsection{MC}
+
+There are two sets of MC simulations have been used in this analysis:
+\begin{itemize}
+\item DPMjet simulations: for the $\Vzero$ efficiency calculations
+      and $\Lambda$ ($\AntiLa$) feeddown correction;
+\item PYTHIA simulations: used to build the detector response matrix for jets.
+\end{itemize}
+The details for each of the simulation sample are listed in the following.
+
+\subsubsection{DPMjet simulations}
+
+\begin{itemize}
+\item  p--Pb collisions at $\sNN=5.02$~TeV;
+\item $12$ runs($195344$, $195346$, $195351$, $195389$
+                $195390$, $195391$, $195478$, $195479$
+                $195480$, $195481$, $195483$, $195482$)
+      in LHC13b4\_efix\_p$x$ ($x$ from $1$ to $4$);
+\item events are selected by the same criteria as in data.
+\end{itemize}
+Table~\ref{tab:c02NumSelEvMC} shows the statistics in DPMjet simulations.
+
+\begin{table}[htdp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+$0-5\%$ & $5-10\%$ & $10-20\%$ & $20-40\%$ &
+                     $40-60\%$ & $60-80\%$ & $80-100\%$ \\
+\hline
+$xxxxx$ & $xxxxxx$ & $xxxxxxx$ & $xxxxxxx$ &
+                     $xxxxxxx$ & $xxxxxxx$ & $xxxxxxxx$ \\
+\hline
+\end{tabular}
+\end{center}
+\caption{Number of selected events in $7$ event multiplicity bins with
+         V0A centrality estimator in DPMjet simulations.}
+\label{tab:c02NumSelEvMC}
+\end{table}
+
+\subsubsection{PYTHIA simulations}\label{sec:03PySampleMC}
+
+\begin{itemize}
+\item pp collisions at $\s=5.02$~TeV;
+\item data sample: LHC13b4 with LHC13b anchors;
+\item a Lorentz boost has to be applied for the rapidity shift in p--Pb system;
+\item events generated in 10 $\pT$-hard bins:
+      \begin{equation}
+[5,~11,~21,~36,~57,~84,~117,~152,~191,~234,~\infty]~({\rm in}~\GeVc).
+      \end{equation}
+\end{itemize}

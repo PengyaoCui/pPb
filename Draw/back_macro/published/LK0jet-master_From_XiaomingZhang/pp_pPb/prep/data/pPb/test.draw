@@ -1,0 +1,35 @@
+#figure
+
+#miny 0
+#maxy 1
+#geom 500x500
+
+#x Yonghong
+#y Xiaoming
+
+#xrange -10,10
+
+
+/Users/ploskon/devel/LK0jet/iterations/Update20160725/plot/data/AnalysisResults.root :listJE_JC04_JR04_PtJ10/hRatioV_Stat : p : title=R=0.4 R<0.4
+
+/Users/ploskon/devel/LK0jet/iterations/Update20160725/plot/data/AnalysisResults.root :listJE_JC02_JR04_PtJ10/hRatioV_Stat : p : title=R=0.4 R<0.2
+
+/Users/ploskon/devel/LK0jet/iterations/Update20160725/plot/data/AnalysisResults.root :listJE_JC04_JR02_PtJ10/hRatioV_Stat : p : title=R=0.2 R<0.4
+
+/Users/ploskon/devel/LK0jet/iterations/Update20160725/plot/data/AnalysisResults.root :listJE_JC02_JR02_PtJ10/hRatioV_Stat : p : title=R=0.2 R<0.2
+
+#figure
+
+#miny 0
+#maxy 0.4
+
+/Users/ploskon/devel/LK0jet/pp/yonghong/results/test.root 		:hRatioV_Ptj10_Stat :p : title=pp R=0.4 R<0.4
+/Users/ploskon/devel/LK0jet/pp/yonghong/results/test.root 		:grErr_hRatioV_Ptj10_Stat :p serror noleg -k: title=pp 
+
+/Users/ploskon/devel/LK0jet/iterations/Update20160725/plot/data/AnalysisResults.root :listHD_JC04_JR04_PtJ10/hRatioV_Stat : p : title=R=0.4 R<0.4
+
+/Users/ploskon/devel/LK0jet/iterations/Update20160725/plot/data/AnalysisResults.root :listHD_JC02_JR04_PtJ10/hRatioV_Stat : p : title=R=0.4 R<0.2
+
+/Users/ploskon/devel/LK0jet/iterations/Update20160725/plot/data/AnalysisResults.root :listHD_JC04_JR02_PtJ10/hRatioV_Stat : p : title=R=0.2 R<0.4
+
+#/Users/ploskon/devel/LK0jet/iterations/Update20160725/plot/data/AnalysisResults.root :listHD_JC02_JR02_PtJ10/hRatioV_Stat : p : title=R=0.2 R<0.2

@@ -1,0 +1,58 @@
+#hKshortErr_
+#hLambdaErr_
+#hAntiLaErr_
+
+#figure
+#name Inclusive K0s syst uncert
+#miny 0
+#maxy 0.119
+#geom 500x500
+#x #it{p}_{T}^{ K_{s}^{0}} (GeV/#it{c})
+#y Relative systematic uncertainty
+#comment 0.04, 0.85, 0.7, 0.7, item=ALICE K_{s}^{0} item=p-Pb #sqrt{#it{s}_{NN}}=5.02 TeV item=|#eta_{K^{0}_{s}}|<0.75 tx_size=0.04
+#legend 0.62,0.65,0.9,0.88, tx_size=0.035
+
+./data/AnaSystematic.root 		:listIncl/hKshortSyst		       		:hist 		: title=Total     
+./data/AnaSystematic.root 		:listIncl/hKshortErr_Topo       		:hist 		: title=Topological     
+./data/AnaSystematic.root 		:listIncl/hKshortErr_Ctau       		:hist 		: title=Proper lifetime     
+./data/AnaSystematic.root 		:listIncl/hKshortErr_CompM       		:hist 		: title=Competing V^{0}
+./data/AnaSystematic.root 		:listIncl/hKshortErr_PIDinTPC    		:hist 		: title=PID
+./data/AnaSystematic.root 		:listIncl/hKshortErr_RowsTPC      		:hist 		: title=Track Selection  	
+./data/AnaSystematic.root 		:listIncl/hKshortErr_SigmaInvM   		:hist 		: title=Signal Extraction
+
+
+#figure
+#name Inclusive Lambda syst uncert
+#miny 0
+#maxy 0.119
+#geom 500x500
+#x #it{p}_{T}^{ #Lambda} (GeV/#it{c})
+#y Relative systematic uncertainty
+#comment 0.04, 0.85, 0.7, 0.7, item=ALICE #Lambda item=p-Pb #sqrt{#it{s}_{NN}}=5.02 TeV item=|#eta_{#Lambda}|<0.75 tx_size=0.04
+#legend 0.62,0.65,0.9,0.88, tx_size=0.035
+
+./data/AnaSystematic.root 		:listIncl/hLambdaSyst		       		:hist 		: title=Total
+./data/AnaSystematic.root 		:listIncl/hLambdaErr_Topo       		:hist 		: title=Topological     
+./data/AnaSystematic.root 		:listIncl/hLambdaErr_Ctau       		:hist 		: title=Proper lifetime     
+./data/AnaSystematic.root 		:listIncl/hLambdaErr_CompM       		:hist 		: title=Competing V^{0}
+./data/AnaSystematic.root 		:listIncl/hLambdaErr_PIDinTPC    		:hist 		: title=PID
+./data/AnaSystematic.root 		:listIncl/hLambdaErr_RowsTPC      		:hist 		: title=Track Selection  	
+./data/AnaSystematic.root 		:listIncl/hLambdaErr_SigmaInvM   		:hist 		: title=Signal Extraction
+
+#figure
+#name Inclusive AntiLambda syst uncert
+#miny 0
+#maxy 0.119
+#geom 500x500
+#x #it{p}_{T}^{ #bar{#Lambda}} (GeV/#it{c})
+#y Relative systematic uncertainty
+#comment 0.04, 0.85, 0.7, 0.7, item=ALICE #bar{#Lambda} item=p-Pb #sqrt{#it{s}_{NN}}=5.02 TeV item=|#eta_{#bar{#Lambda}}|<0.75 tx_size=0.04
+#legend 0.62,0.65,0.9,0.88, tx_size=0.035
+
+./data/AnaSystematic.root 		:listIncl/hAntiLaSyst		    		:hist 		: title=Total
+./data/AnaSystematic.root 		:listIncl/hAntiLaErr_Topo       		:hist 		: title=Topological     
+./data/AnaSystematic.root 		:listIncl/hAntiLaErr_Ctau       		:hist 		: title=Proper lifetime     
+./data/AnaSystematic.root 		:listIncl/hAntiLaErr_CompM       		:hist 		: title=Competing V^{0}
+./data/AnaSystematic.root 		:listIncl/hAntiLaErr_PIDinTPC    		:hist 		: title=PID
+./data/AnaSystematic.root 		:listIncl/hAntiLaErr_RowsTPC      		:hist 		: title=Track Selection  	
+./data/AnaSystematic.root 		:listIncl/hAntiLaErr_SigmaInvM   		:hist 		: title=Signal Extraction

@@ -1,0 +1,151 @@
+\newif\ifdraft
+\newif\iffull
+\newif\ifcomment
+\newif\iflatexdiff
+\newif\ifbibtex
+\newif\ifpreprint
+%
+\latexdifftrue %enable latex diff commands
+\drafttrue     %enable draft banner and version number
+\bibtextrue    %enable bibtex (off for final preprint or paper)
+\preprinttrue  %enable cern preprint (for arXiv)
+%fulltrue      %include author and acknowledgement and references (refpaper.tex/refpreprint.tex)
+%
+\newif\ifplbpaper
+\newif\ifapspaper
+\apspapertrue
+%
+\def\snntitle{$\snn$}
+\ifpreprint
+  \def\snntitle{$\snnbf$}
+\fi
+%
+\def\dtitle{$\Lambda$ and $\Kshort$ in jets in p--Pb collisions at $\sNN=5.02$~TeV}
+\def\stitle{$\Lambda$ and $\Kshort$ in jets} % Put a short paper title (only relevant for CERN paper)
+\def\phnum{2015-XXX}     % Required, obtained from PH
+\def\phdat{xx yyy 2015}  % Required, obtained from PH
+\def\dvers{v2.0}         % Set version number by hand every time you want to change it
+\def\revision{rev. 1}
+%
+\input{AliPubV0JetspPb.sty}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\ifpreprint
+  \begin{titlepage}
+  \PHnumber{\phnum}
+  \PHdate{\phdat}
+  \title{\dtitle}
+  \ShortTitle{\stitle}
+%
+  \iffull
+    \Collaboration{ALICE Collaboration~\thanks{See Appendix~\ref{app:collab} for the list of collaboration members}}
+  \else
+    \Collaboration{ALICE Collaboration}
+  \fi
+%
+  \ShortAuthor{ALICE Collaboration}
+%
+  \ifdraft
+    \begin{center}
+    \today\\ \color{red}DRAFT \dvers\ \hspace{0.3cm} \revision $\color{white}:$\$\color{black}\vspace{0.3cm}
+    \end{center}
+  \fi
+\else
+  \begin{frontmatter}
+  \title{\dtitle}
+%
+  \iffull
+    \input{authors-paper.tex}
+    \Collaboration{ALICE Collaboration}
+  \else
+    \ifdraft
+      \author{ALICE Collaboration \\ \vspace{0.3cm}
+      \today\\ \color{red}DRAFT \dvers\ \hspace{0.3cm} \revision $\color{white}:$\$\color{black}}
+    \else
+      \author{ALICE Collaboration}
+    \fi
+  \fi
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{abstract}
+\input{c00Abstract}
+\end{abstract}
+
+\ifpreprint
+  \end{titlepage}
+\else
+  \begin{keyword}
+%% keywords here, in the form: keyword \sep keyword
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+  heavy-ion \sep collision \sep  LHC \sep  electron \sep heavy-flavour \sep suppression
+  \end{keyword}
+  \end{frontmatter}
+  \newpage
+\fi
+%
+\ifdraft
+  \thispagestyle{fancyplain}
+\fi
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{c99WorkLog}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setcounter{page}{2}
+
+\input{c01Introduction}
+\input{c02DataAna}
+\input{c03Results}
+\input{c04Conclusion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifpreprint
+  \iffull
+    \newenvironment{acknowledgement}{\relax}{\relax}
+    \begin{acknowledgement}
+    \section*{Acknowledgements}
+    \input{acknowledgements}
+    \end{acknowledgement}
+%
+    \ifbibtex
+      \bibliographystyle{utphys}
+      \bibliography{AliPubV0JetspPb}
+    \else
+      \input{refpreprint.tex}
+    \fi
+%
+    \newpage
+    \appendix
+    \section{The ALICE Collaboration}
+    \label{app:collab}
+    \input{authors-preprint.tex}
+  \else
+    \ifbibtex
+      \bibliographystyle{utphys}
+      \bibliography{AliPubV0JetspPb}
+    \else
+      \input{AliPubV0JetspPb}
+    \fi
+  \fi
+\else
+  \iffull
+    \vspace{0.5cm}
+    \input{acknowledgements}
+    \input{AliPubV0JetspPb}
+  \else
+    \ifbibtex
+      \bibliographystyle{\bibstname}
+      \bibliography{AliPubV0JetspPb}
+    \else
+%     \input{refpaper.tex}
+    \fi
+  \fi
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

@@ -1,0 +1,15 @@
+Running order:
+
+
+RunPtSpect.sh  PtSpect.C
+RunUnctSource.sh UnctSource.C
+RunInclUncer.sh InclUncer.C
+
+RunUncerJet.sh UncerJet.C
+RunUncerUE.sh UncerUE.C
+RunUncerTot.sh UncerTot.C
+RunFinalSpect.sh FinalSpect.C
+
+RunUncerRatio.sh UncerRatio.C
+
+RunSpectwCent.sh SpectwCent.C

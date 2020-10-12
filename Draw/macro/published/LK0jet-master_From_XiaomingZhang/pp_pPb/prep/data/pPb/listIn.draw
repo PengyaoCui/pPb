@@ -1,0 +1,17 @@
+#-----------------------
+#figure
+#geom 500x500
+#title: AnalysisResults.root.draw
+#legend title=listIn
+
+#dir /Users/ploskon/devel/LK0jet/iterations/Update20160725/plot/data/
+
+AnalysisResults.root 		:listIn/hKshort_Stat :p : title=hKshort_Stat
+AnalysisResults.root 		:listIn/hKshort_Syst :serror noleg -k: title=hKshort_Syst
+AnalysisResults.root 		:listIn/hLambda_Stat :p : title=hLambda_Stat
+AnalysisResults.root 		:listIn/hLambda_Syst :serror noleg -k: title=hLambda_Syst
+AnalysisResults.root 		:listIn/hAntiLa_Stat :p : title=hAntiLa_Stat
+AnalysisResults.root 		:listIn/hAntiLa_Syst :serror noleg -k: title=hAntiLa_Syst
+#AnalysisResults.root 		:listIn/hRatioV_Stat :p : title=hRatioV_Stat
+#AnalysisResults.root 		:listIn/hRatioV_Syst :serror noleg -k: title=hRatioV_Syst
+

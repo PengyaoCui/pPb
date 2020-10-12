@@ -1,0 +1,50 @@
+## data.log ##
+
+# AnalysisResults.root
+
+- The final results
+- list format: list[Type]\_[JC]\_[JR]\_[PtJ]\_[PtV]
+  - Type: In = inclusive V0s
+          UE = Underlying (PC V0s as default)
+          JE = V0s matched with jets (UE not subtracted)
+          HD = JE - UE
+          VJ = V0 asf of match radius (UE not subtracted)
+  - JC: V0-jet matching radius, R(V0,jet)
+  - JR: jet resolution parameter
+    -  JR = Mean: average over jet R = 0.2, 0.3 and 0.4
+  - PtJ: jet pT, > 10 GeV/c and > 20 GeV/c
+  - PtV: V0 pT range (for VJ only)
+- list contents: h[Obs]\_[Err]
+  - Obs: Kshort, Lambda, AntiLa and L/K ratio
+  - Err: Stat = effi. corrected density dist. or L/K ratio with stat. err.
+         Syst = relative syst. err.
+###############################################################################
+
+# AnalysisOutputs\_SystIn.root
+
+- Syst. err. of inclusive V0s (on V0 yields)
+  - list format: list\_SystIn\_[V0]\_[Binning]
+    - V0: Kshort, Lambda and AntiLa
+    - Binning: Bin21 = inclusive and UE V0s
+               Bin07 = JE or HD V0s with pT,jet>10 GeV/c
+               Bin05 = JE or HD V0s with pT,jet>20 GeV/c
+###############################################################################
+
+# AnalysisOutputs\_SystJE.root
+
+- Syst. err. on jet pT scale
+- For JE and HD V0s
+###############################################################################
+
+# AnalysisOutputs\_SystUE.root
+
+- Syst. err. on UE subtraction
+- For HD V0s only
+###############################################################################
+
+# AnalysisOutputs\_Effi.root
+
+- listIn: inclusive V0s
+- listJC04\_PtJ10: V0s in R(V0,jet) < 0.4 with pT,jet > 10 GeV/c
+- listOC06\_PtJ10: V0s in R(V0,jet) > 0.6 with pT,jet > 10 GeV/c
+###############################################################################

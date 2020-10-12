@@ -1,0 +1,9 @@
+#figure
+#title: ./pp/s2f_cL2K_Pt_PtJE_JC04_ZNA_000_100.root.draw
+/Users/ploskon/devel/LK0jet/utils/pp/s2f_cL2K_Pt_PtJE_JC04_ZNA_000_100.root 		:hframe :hist : title=
+/Users/ploskon/devel/LK0jet/utils/pp/s2f_cL2K_Pt_PtJE_JC04_ZNA_000_100.root 		:grErr_hRatioV_bkgUE_Stat :hist : title=grErr_
+/Users/ploskon/devel/LK0jet/utils/pp/s2f_cL2K_Pt_PtJE_JC04_ZNA_000_100.root 		:grErr_hRatioV_bkgUE_Stat :hist : title=grErr_
+/Users/ploskon/devel/LK0jet/utils/pp/s2f_cL2K_Pt_PtJE_JC04_ZNA_000_100.root 		:grErr_hRatioV_Inclu_Stat :hist : title=grErr_
+/Users/ploskon/devel/LK0jet/utils/pp/s2f_cL2K_Pt_PtJE_JC04_ZNA_000_100.root 		:hRatioV_Inclu_Stat :hist : title=
+/Users/ploskon/devel/LK0jet/utils/pp/s2f_cL2K_Pt_PtJE_JC04_ZNA_000_100.root 		:grErr_hRatioV_Ptj10_Stat :hist : title=grErr_
+/Users/ploskon/devel/LK0jet/utils/pp/s2f_cL2K_Pt_PtJE_JC04_ZNA_000_100.root 		:hRatioV_Ptj10_Stat :hist : title=

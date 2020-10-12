@@ -1,0 +1,373 @@
+#include "./SourceFun.h"
+
+//___________________________________________________________________
+void PtSpect(){
+  TString   sType[] = {"Xi"};//"XiPlus"; "XiMinus"
+  //TString sSaveName = "PtSpect_JC_test_everycut";
+  TString sSaveName = "PtSpect_LHC16klop";
+  TString sTex = "Period : LHC16k LHC16l LHC16o and LHC16p";
+
+  Bool_t IsEffCorr(1);
+
+  Bool_t   IsAnaMC(0);//Draw MC Pt spect to compare with inclusive
+  Bool_t IsAnaIncl(1);
+  Bool_t   IsAnaJC(1);
+  Bool_t   IsAnaJE(1);
+  Bool_t   IsAnaPC(1);
+  Bool_t   IsAnaOC(0);
+  Bool_t   IsAnaNJ(0);
+
+  Bool_t   IsSave(0);
+  Bool_t  IsRebin(0);
+  Bool_t   IsNorm(1);
+//===================================================================
+  TString sEventFilePath = "/home/cuipengyao/study/code/Cascade_LHC16klop_total/Local";
+  //TString sEventFilePathk = "/home/cuipengyao/study/code/Cascade_LHC16k/JC_CombineXi_CorrNormFact";
+  //TString sEventFilePathh = "/home/cuipengyao/study/code/Cascade_LHC16h/JC_CombineXi_CorrNormFact";
+  //TString sEventFilePathl = "/home/cuipengyao/study/code/Cascade_LHC16l/JC_CombineXi_CorrNormFact";
+
+//===================================================================
+  TString   sMCEventFile = "AnalysisOutputs_LoopIncMC.root";
+  TString sInclEventFile = "AnalysisOutputs_Loop1ndRD.root";
+  TString  sJetEventFile = "AnalysisOutputs_LoopJetRD.root";
+
+//-------------------------------------------------------------------
+  TString   sMCSpectFile = "AnalysisOutputs_FitCbinMC.root";
+  TString sInclSpectFile = "AnalysisOutputs_FitCbinRD.root";
+  TString   sEffInclFile = "AnalysisOutputs_EffInclMC.root";
+  TString  sJetSpectFile = "AnalysisOutputs_FitCbinJE.root";
+  TString    sEffJetFile = "AnalysisOutputs_EffCorrJE.root";
+//===================================================================
+
+  TString      sEvent = "hEvent";
+//-------------------------------------------------------------------
+  TString sObject = "hS";
+  TString    sEff = "hPtEffi";
+//===================================================================
+  Double_t YMin = 1e-6;
+  Double_t YMax = 1e7;
+  Double_t XMin = 2.;
+  Double_t XMax = 6.5;
+  
+//-------------------------------------------------------------------
+  TCanvas*  c1 = new TCanvas("c1", "");
+  TLegend* leg = new TLegend(0.7,0.7,0.9,0.9);
+//-------------------------------------------------------------------
+  if(IsSave){
+    //TFile *file = TFile::Open(Form("./result/%s.root", sSaveName.Data()), "UPDATE");
+    if (IsEffCorr && IsNorm)  TFile *file = TFile::Open(Form("./result/%s.root", sSaveName.Data()), "UPDATE");
+    if (IsNorm && !IsEffCorr) TFile *file = TFile::Open(Form("./result/%s_wo_EffCorr.root", sSaveName.Data()), "UPDATE");
+    if (!IsNorm && IsEffCorr) TFile *file = TFile::Open(Form("./result/%s_wo_Norm.root", sSaveName.Data()), "UPDATE");
+    if (!IsNorm && !IsEffCorr)TFile *file = TFile::Open(Form("./result/%s_wo_Norm_EffCorr.root", sSaveName.Data()), "UPDATE");
+    //TList *list = (TList*)file->Get("PtSpect"); if (list) { file->Close(); return; } else { list = new TList(); }
+  }
+//-------------------------------------------------------------------
+  
+
+  const Int_t nType  = sizeof(sType)/sizeof(TString);
+  for(Int_t i=0; i<nType; i++) {
+    TString sOpt = sType[i];
+  if(IsRebin){
+    const Double_t dPtBin[] = { 0.6, 1.6, 2.2, 2.8, 3.6, 5.0, 7.7};
+    const Int_t nPtBin = sizeof(dPtBin)/sizeof(Double_t)-1;
+    const TH1D* hRebin = new TH1D(Form("hRebin_%s", sOpt.Data()),"",nPtBin,dPtBin);
+    // hPtPCL = (TH1D*)RebinTH1D(hPtPCL, hRebin);
+  }
+  //-------------------------------------------------------------------
+    TString   sMCEventList = Form("listLoopIncMC_%s_Default;1",sOpt.Data());
+    TString sInclEventList = Form("listLoop1ndRD_%s_Default;1",sOpt.Data());
+    TString  sJetEventList = Form("listLoopJetRD_%s_Default_PtJ22_JC;1",sOpt.Data());
+    TString   sListNJEvent = Form("listLoopJetRD_%s_Default_PtJ22_NJ",sOpt.Data());
+  //-------------------------------------------------------------------
+  
+    TString    sListMC = Form("listFitCbinMC_%s_Default;1",sOpt.Data());
+    TString  sListIncl = Form("listFitCbinRD_%s_Default;1",sOpt.Data());
+    TString    sListJC = Form("listFitCbinJE_%s_Default_PtJ22_JC;1",sOpt.Data());
+    TString   sListPCL = Form("listFitCbinJE_%s_Default_PtJ22_PCL;1",sOpt.Data());
+    TString   sListPCU = Form("listFitCbinJE_%s_Default_PtJ22_PCU;1",sOpt.Data());
+    TString    sListOC = Form("listFitCbinJE_%s_Default_PtJ22_OC;1",sOpt.Data());
+    TString    sListNJ = Form("listFitCbinJE_%s_Default_PtJ22_NJ;1",sOpt.Data());
+  
+    TString   sEffIncl = Form("listEffInclMC_%s_Default;1",sOpt.Data());
+    TString     sEffJC = Form("listEffCorrJE_%s_Default_PtJ22_JC;1",sOpt.Data());
+    TString    sEffPCL = Form("listEffCorrJE_%s_Default_PtJ22_PCL;1",sOpt.Data());
+    TString    sEffPCU = Form("listEffCorrJE_%s_Default_PtJ22_PCU;1",sOpt.Data());
+    TString     sEffOC = Form("listEffCorrJE_%s_Default_PtJ22_OC;1",sOpt.Data());
+    TString     sEffNJ = Form("listEffCorrJE_%s_Default_PtJ22_NJ;1",sOpt.Data());
+  
+  //===================================================================
+    if (IsAnaMC){
+      if (sEventFilePath.IsNull() || sMCEventFile.IsNull() || sMCEventList.IsNull() || sEvent.IsNull()) return;
+      TH1D* hMCEvent = (TH1D*)GetTH1FromFile(sEventFilePath, sMCEventFile, sMCEventList, sEvent);
+    }
+    if (IsAnaIncl){
+      if (sEventFilePath.IsNull() || sInclEventFile.IsNull() || sInclEventList.IsNull() || sEvent.IsNull()) return;
+      TH1D* hInclEvent = (TH1D*)GetTH1FromFile(sEventFilePath, sInclEventFile, sInclEventList, sEvent);
+      //TH1D* hInclEvent = (TH1D*)GetTH1FromFile(sEventFilePath, sJetEventFile, sJetEventList, sEvent);
+    }
+    if (IsAnaJC || IsAnaPC || IsAnaOC || IsAnaJE){
+      if (sEventFilePath.IsNull() || sJetEventFile.IsNull() || sJetEventList.IsNull() || sEvent.IsNull()) return;
+      TH1D* hJetEvent = (TH1D*)GetTH1FromFile(sEventFilePath, sJetEventFile, sJetEventList, sEvent);
+    }
+  
+    if (IsAnaNJ){
+      if (sEventFilePath.IsNull() || sJetEventFile.IsNull() || sListNJEvent.IsNull() || sEvent.IsNull()) return;
+      TH1D* hNJEvent = (TH1D*)GetTH1FromFile(sEventFilePath, sJetEventFile, sListNJEvent, sEvent);
+    }
+  
+  //-------------------------------------------------------------------
+
+    if (IsAnaMC){
+      if (sListMC.IsNull()) return;
+      TH1D*  hPtMC = (TH1D*)GetTH1FromFile(sEventFilePath, sMCSpectFile, sListMC, sObject);
+      hPtMC->SetName(Form("hPtMC_%s", sOpt.Data()));
+      if (IsNorm) hPtMC = NormIncl(hPtMC, hMCEvent);
+      NormBinSize(hPtMC);
+      SetLine(hPtMC,cLine[i+1],sMark[i+1]);
+      SetAxis(hPtMC, YMin, YMax, XMin, XMax, "d#it{#rho}/d#it{p}_{T}");
+      if(IsSave) {file->cd(); hPtMC->Write(Form("hPtMC_%s", sOpt.Data()), TObject::kSingleKey);}
+      hPtMC->Draw("same");
+      leg->AddEntry(hPtMC,"MC","f");
+    }
+  
+    if (IsAnaIncl){
+      if (sListIncl.IsNull() || sEffIncl.IsNull()) return;
+      TH1D*  hPtIncl = (TH1D*)GetTH1FromFile(sEventFilePath, sInclSpectFile, sListIncl, sObject);
+      hPtIncl->SetName(Form("hPtIncl_%s", sOpt.Data()));
+      if (IsNorm) hPtIncl = NormIncl(hPtIncl, hInclEvent);
+      if (IsEffCorr){
+        TH1D* hEffIncl = (TH1D*)GetTH1FromFile(sEventFilePath, sEffInclFile, sEffIncl, sEff);
+        hEffIncl->SetName(Form("hEffIncl_%s", sOpt.Data()));
+        hPtIncl = RatioTH1D(hPtIncl, hEffIncl);
+      }
+      NormBinSize(hPtIncl);
+      SetLine(hPtIncl,cLine[i],sMark[i]);
+      SetAxis(hPtIncl, YMin, YMax, XMin, XMax, "d#it{#rho}/d#it{p}_{T}");
+      if(IsSave) {file->cd(); hPtIncl->Write(Form("hPtIncl_%s", sOpt.Data()), TObject::kSingleKey);}
+      hPtIncl->Draw("same");
+      leg->AddEntry(hPtIncl,"Inclusive","lp");
+      //leg->AddEntry(hPtIncl,"#Xi^{#pm}","lp");
+
+      //Sys Uncertainty======>
+       const Int_t n = 20;
+       Double_t x[n] = {0.7, 0.9, 1.1, 1.3, 1.5, 1.7, 1.9, 2.1, 2.3, 2.5, 2.7, 2.9, 3.15, 3.45, 3.8, 4.25, 4.75, 5.25, 6., 7.1};
+       Double_t y[n] = NULL; for (Int_t k=1; k<=hPtIncl->GetNbinsX(); k++){ y[k-1] = hPtIncl->GetBinContent(k); }
+       Double_t ex[n] = {0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.06, 0.075, 0.11, 0.125, 0.125, 0.19, 0.275, 0.275};
+       Double_t ey[n] = {0.0517759*y[0], 0.0148557*y[1], 0.0162595*y[2], 0.0121168*y[3], 0.00530396*y[4], 0.0172869*y[5], 0.0180987*y[6], 0.0314237*y[7], 0.0339172*y[8], 0.0350568*y[9], 0.042204*y[10], 0.0475007*y[11], 0.0449483*y[12], 0.0547504*y[13], 0.0568438*y[14], 0.0604477*y[15], 0.0544507*y[16], 0.0602186*y[17], 0.07328*y[18], 0.0931339*y[19]};
+       //Double_t ey[n] = {0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.};
+       GrIncl = new TGraphErrors(n,x,y,ex,ey);
+       GrIncl->SetFillStyle(0);
+       GrIncl->SetLineWidth(2);
+       //GrIncl->SetFillColor(hPtIncl->GetLineColor());
+       GrIncl->SetLineColor(hPtIncl->GetLineColor());
+       GrIncl->Draw("e2same");      
+      if(IsSave) {file->cd(); GrIncl->Write(Form("GrIncl_%s", sOpt.Data()), TObject::kSingleKey);}
+    }
+  
+    if (IsAnaJC){
+      if (sListJC.IsNull() || sEffJC.IsNull()) return;
+      TH1D*  hPtJC = (TH1D*)GetTH1FromFile(sEventFilePath, sJetSpectFile, sListJC, sObject);
+      hPtJC->SetName(Form("hPtJC_%s", sOpt.Data()));
+      if (IsEffCorr) {
+        TH1D* hEffJC = (TH1D*)GetTH1FromFile(sEventFilePath, sEffJetFile, sEffJC, sEff); 
+        hEffJC->SetName(Form("hEffJC_%s", sOpt.Data()));
+        hPtJC = RatioTH1D(hPtJC, hEffJC);
+      }
+      if (IsRebin) hPtJC = (TH1D*)RebinTH1D(hPtJC, hRebin);
+      if (IsNorm) hPtJC = NormJC(hPtJC, hJetEvent);
+      NormBinSize(hPtJC);
+  
+      SetLine(hPtJC,cLine[i+nType],sMark[i+nType]);
+      //SetLine(hPtJC,cLine[i+3],sMark[i+3]);
+      SetAxis(hPtJC, YMin, YMax, XMin, XMax, "d#it{#rho}/d#it{p}_{T}");
+      if(IsSave) {file->cd();  hPtJC->Write(Form("hPtJC_%s", sOpt.Data()), TObject::kSingleKey);}
+      //hPtJC->Draw("same");
+      //leg->AddEntry(hPtJC,"JC","lp");
+      //leg->AddEntry(hPtJC,"#Xi^{#pm}","lp");
+ 
+     //Sys Uncertainty======>
+       const Int_t n = 20;
+       Double_t x[n] = {0.7, 0.9, 1.1, 1.3, 1.5, 1.7, 1.9, 2.1, 2.3, 2.5, 2.7, 2.9, 3.15, 3.45, 3.8, 4.25, 4.75, 5.25, 6., 7.1};
+       Double_t y[n] = NULL; for (Int_t k=1; k<=hPtJC->GetNbinsX(); k++){ y[k-1] = hPtJC->GetBinContent(k); }
+       Double_t ex[n] = {0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.06, 0.075, 0.11, 0.125, 0.125, 0.19, 0.275, 0.275};
+       Double_t ey[n] = {1.4592*y[0], 6.97287*y[1], 0.203114*y[2], 0.37883*y[3], 0.287772*y[4], 0.0780311*y[5], 0.407796*y[6], 0.12666*y[7], 0.0535395*y[8], 0.136924*y[9], 0.0749*y[10], 0.105192*y[11], 0.055064*y[12], 0.131645*y[13], 0.0746886*y[14], 0.0864149*y[15], 0.0987857*y[16], 0.101547*y[17], 0.172815*y[18], 5.94838*y[19]}; 
+       GrJC = new TGraphErrors(n,x,y,ex,ey);
+       GrJC->SetFillStyle(0);
+       GrJC->SetLineWidth(2);
+       GrJC->SetLineColor(hPtJC->GetLineColor());
+       //GrJC->Draw("e2same");      
+      if(IsSave) {file->cd(); GrJC->Write(Form("GrJC_%s", sOpt.Data()), TObject::kSingleKey);}
+    }
+  
+    if (IsAnaPC){
+      if (sListPCL.IsNull() || sListPCU.IsNull() || sEffPCL.IsNull() || sEffPCU.IsNull()) return;
+      TH1D*  hPtPCL = (TH1D*)GetTH1FromFile(sEventFilePath, sJetSpectFile, sListPCL, sObject);
+      hPtPCL->SetName(Form("hPtPCL_%s", sOpt.Data()));
+      if (IsEffCorr){
+        TH1D* hEffPCL = (TH1D*)GetTH1FromFile(sEventFilePath, sEffJetFile, sEffPCL, sEff);
+        hEffPCL->SetName(Form("hEffPCL_%s", sOpt.Data()));
+        hPtPCL = RatioTH1D(hPtPCL, hEffPCL);
+      }
+  
+      TH1D*  hPtPCU = (TH1D*)GetTH1FromFile(sEventFilePath, sJetSpectFile, sListPCU, sObject);
+      hPtPCU->SetName(Form("hPtPCU_%s", sOpt.Data()));
+      if (IsEffCorr){
+        TH1D* hEffPCU = (TH1D*)GetTH1FromFile(sEventFilePath, sEffJetFile, sEffPCU, sEff);
+        hEffPCU->SetName(Form("hEffPCU_%s", sOpt.Data()));
+        hPtPCU = RatioTH1D(hPtPCU, hEffPCU);
+      }
+      hPtPCL->Add(hPtPCU);
+      TH1D *hPtPC = hPtPCL; 
+      hPtPC->SetName(Form("hPtPC_%s", sOpt.Data()));
+      if (IsRebin)hPtPC = (TH1D*)RebinTH1D(hPtPC, hRebin);
+      hPtPC->SetName(Form("hPtPC_%s", sOpt.Data()));
+      if (IsNorm) hPtPC = NormPC(hPtPC, hJetEvent);
+      hPtPC->SetName(Form("hPtPC_%s", sOpt.Data()));
+      NormBinSize(hPtPC);
+      //SetLine(hPtPC,kRed,24);
+      SetLine(hPtPC,cLine[i+2*nType],sMark[i+2*nType]);
+      SetAxis(hPtPC, YMin, YMax, XMin, XMax, "d#it{#rho}/d#it{p}_{T}");
+      if(IsSave) {file->cd();  hPtPC->Write(Form("hPtPC_%s", sOpt.Data()), TObject::kSingleKey);}
+      hPtPC->Draw("same");
+      leg->AddEntry(hPtPC,"UE","lp");
+     //Sys Uncertainty======>
+       const Int_t n = 20;
+       Double_t x[n] = {0.7, 0.9, 1.1, 1.3, 1.5, 1.7, 1.9, 2.1, 2.3, 2.5, 2.7, 2.9, 3.15, 3.45, 3.8, 4.25, 4.75, 5.25, 6., 7.1};
+       Double_t y[n] = NULL; for (Int_t k=1; k<=hPtPC->GetNbinsX(); k++){ y[k-1] = hPtPC->GetBinContent(k); }
+       Double_t ex[n] = {0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.06, 0.075, 0.11, 0.125, 0.125, 0.19, 0.275, 0.275};
+       Double_t ey[n] = {1.4592*y[0], 6.97287*y[1], 0.203114*y[2], 0.37883*y[3], 0.287772*y[4], 0.0780311*y[5], 0.407796*y[6], 0.12666*y[7], 0.0535395*y[8], 0.136924*y[9], 0.0749*y[10], 0.105192*y[11], 0.055064*y[12], 0.131645*y[13], 0.0746886*y[14], 0.0864149*y[15], 0.0987857*y[16], 0.101547*y[17], 0.172815*y[18], 5.94838*y[19]}; 
+       GrPC = new TGraphErrors(n,x,y,ex,ey);
+       GrPC->SetFillStyle(0);
+       GrPC->SetLineWidth(2);
+       GrPC->SetLineColor(hPtPC->GetLineColor());
+       GrPC->Draw("e2same");      
+      if(IsSave) {file->cd(); GrPC->Write(Form("GrPC_%s", sOpt.Data()), TObject::kSingleKey);}
+    }
+  
+    if (IsAnaJE){
+      if (!hPtJC || !hPtPC) return;
+      TH1D* hPtJE = (TH1D*) hPtJC->Clone("hPtJE");
+      hPtJE->SetName(Form("hPtJE_%s", sOpt.Data()));
+      TH1D* hPtUE = (TH1D*) hPtPC->Clone("hPtUE");
+      hPtUE->SetName(Form("hPtUE_%s", sOpt.Data()));
+      hPtJE = (TH1D*)Subtract(hPtJE, hPtUE);
+      //hPtJE->Add(hPtUE, -1);
+      //SetLine(hPtJE,kBlue,25);
+      SetLine(hPtJE,cLine[i+3*nType],sMark[i+3*nType]);
+      //SetLine(hPtJE,cLine[i+nType],sMark[i+nType]);
+      if(IsSave) {file->cd();  hPtJE->Write(Form("hPtJE_%s", sOpt.Data()), TObject::kSingleKey);}
+      hPtJE->Draw("same");
+      leg->AddEntry(hPtJE,"JE","lp");
+     //Sys Uncertainty======>
+       const Int_t n = 20;
+       Double_t x[n] = {0.7, 0.9, 1.1, 1.3, 1.5, 1.7, 1.9, 2.1, 2.3, 2.5, 2.7, 2.9, 3.15, 3.45, 3.8, 4.25, 4.75, 5.25, 6., 7.1};
+       Double_t y[n] = NULL; for (Int_t k=1; k<=hPtJE->GetNbinsX(); k++){ y[k-1] = hPtJE->GetBinContent(k); }
+       Double_t ex[n] = {0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.06, 0.075, 0.11, 0.125, 0.125, 0.19, 0.275, 0.275};
+       Double_t ey[n] = {TMath::Sqrt(2.)*1.4592*y[0], TMath::Sqrt(2.)*6.97287*y[1], TMath::Sqrt(2.)*0.203114*y[2], TMath::Sqrt(2.)*0.37883*y[3], TMath::Sqrt(2.)*0.287772*y[4], TMath::Sqrt(2.)*0.0780311*y[5], TMath::Sqrt(2.)*0.407796*y[6], TMath::Sqrt(2.)*0.12666*y[7], TMath::Sqrt(2.)*0.0535395*y[8], TMath::Sqrt(2.)*0.136924*y[9], TMath::Sqrt(2.)*0.0749*y[10], TMath::Sqrt(2.)*0.105192*y[11], TMath::Sqrt(2.)*0.055064*y[12], TMath::Sqrt(2.)*0.131645*y[13], TMath::Sqrt(2.)*0.0746886*y[14], TMath::Sqrt(2.)*0.0864149*y[15], TMath::Sqrt(2.)*0.0987857*y[16], TMath::Sqrt(2.)*0.101547*y[17], TMath::Sqrt(2.)*0.172815*y[18], TMath::Sqrt(2.)*5.94838*y[19]}; 
+       GrJE = new TGraphErrors(n,x,y,ex,ey);
+       GrJE->SetFillStyle(0);
+       GrJE->SetLineWidth(2);
+       GrJE->SetLineColor(hPtJE->GetLineColor());
+       GrJE->Draw("e2same");      
+      if(IsSave) {file->cd(); GrJE->Write(Form("GrJE_%s", sOpt.Data()), TObject::kSingleKey);}
+  
+    }
+  
+    if (IsAnaOC){
+      if (sListOC.IsNull() || sEffOC.IsNull()) return;
+      TH1D*  hPtOC = (TH1D*)GetTH1FromFile(sEventFilePath, sJetSpectFile, sListOC, sObject);
+      hPtOC->SetName(Form("hPtOC_%s", sOpt.Data()));
+      if (IsEffCorr){
+        TH1D* hEffOC = (TH1D*)GetTH1FromFile(sEventFilePath, sEffJetFile, sEffOC, sEff);
+        hEffOC->SetName(Form("hEffOC_%s", sOpt.Data()));
+        hPtOC = RatioTH1D(hPtOC, hEffOC);
+
+        //TH1D* hEffOCk = (TH1D*)GetTH1FromFile(sEventFilePathk, sEffJetFile, sEffOC, sEff);
+        //hEffOCk->SetName(Form("hEffOCk_%s", sOpt.Data()));
+        //hEffOCk->Scale(2.49632e8/(2.49632e8 + 1.28757e8 + 6.72309e7));
+
+        //TH1D* hEffOCh = (TH1D*)GetTH1FromFile(sEventFilePathh, sEffJetFile, sEffOC, sEff);
+        //hEffOCh->SetName(Form("hEffOCh_%s", sOpt.Data()));
+        //hEffOCh->Scale(1.28757e8/(2.49632e8 + 1.28757e8 + 6.72309e7));
+
+        //TH1D* hEffOCl = (TH1D*)GetTH1FromFile(sEventFilePathl, sEffJetFile, sEffOC, sEff);
+        //hEffOCl->SetName(Form("hEffOCl_%s", sOpt.Data()));
+        //hEffOCl->Scale(6.72309e7/(2.49632e8 + 1.28757e8 + 6.72309e7));
+
+        //TH1D *hEffOC = (TH1D*) hEffOCk->Clone(Form("hEffOC_%s", sOpt.Data()));
+        //hEffOC->Add(hEffOCh);
+        //hEffOC->Add(hEffOCl);
+
+        //hPtOC = RatioTH1D(hPtOC, hEffOC);
+      }
+      if (IsRebin) hPtOC = (TH1D*)RebinTH1D(hPtOC, hRebin);
+      if (IsNorm) TH1D* hPtOC = NormOC(hPtOC, hJetEvent);
+      NormBinSize(hPtOC);
+      //SetLine(hPtOC, kRed+3, 22);
+      SetLine(hPtOC,cLine[i],sMark[i]);
+      SetAxis(hPtOC, YMin, YMax, XMin, XMax, "d#it{#rho}/d#it{p}_{T}");
+      if(IsSave) {file->cd(); hPtOC->Write(Form("hPtOC_%s", sOpt.Data()), TObject::kSingleKey);}
+      hPtOC->Draw("same");
+      leg->AddEntry(hPtOC,"OC","lp");
+    }
+  
+    if (IsAnaNJ){
+    if (sListNJ.IsNull() || sEffNJ.IsNull()) return;
+      TH1D*  hPtNJ = (TH1D*)GetTH1FromFile(sEventFilePath, sJetSpectFile, sListNJ, sObject);
+      hPtNJ->SetName(Form("hPtNJ_%s", sOpt.Data()));
+      if (IsEffCorr){
+        TH1D* hEffNJ = (TH1D*)GetTH1FromFile(sEventFilePath, sEffJetFile, sEffNJ, sEff);
+        hEffNJ->SetName(Form("hEffNJ_%s", sOpt.Data()));
+        hPtNJ = RatioTH1D(hPtNJ, hEffNJ);
+
+        //TH1D* hEffNJk = (TH1D*)GetTH1FromFile(sEventFilePathk, sEffJetFile, sEffNJ, sEff);
+        //hEffNJk->SetName(Form("hEffNJk_%s", sOpt.Data()));
+        //hEffNJk->Scale(2.49632e8/(2.49632e8 + 1.28757e8 + 6.72309e7));
+
+        //TH1D* hEffNJh = (TH1D*)GetTH1FromFile(sEventFilePathh, sEffJetFile, sEffNJ, sEff);
+        //hEffNJh->SetName(Form("hEffNJh_%s", sOpt.Data()));
+        //hEffNJh->Scale(1.28757e8/(2.49632e8 + 1.28757e8 + 6.72309e7));
+
+        //TH1D* hEffNJl = (TH1D*)GetTH1FromFile(sEventFilePathl, sEffJetFile, sEffNJ, sEff);
+        //hEffNJl->SetName(Form("hEffNJl_%s", sOpt.Data()));
+        //hEffNJl->Scale(6.72309e7/(2.49632e8 + 1.28757e8 + 6.72309e7));
+
+        //TH1D *hEffNJ = (TH1D*) hEffNJk->Clone(Form("hEffNJ_%s", sOpt.Data()));
+        //hEffNJ->Add(hEffNJh);
+        //hEffNJ->Add(hEffNJl);
+
+        //hPtNJ = RatioTH1D(hPtNJ, hEffNJ);
+
+      }
+      if (IsNorm) TH1D* hPtNJ = NormNJ(hPtNJ, hNJEvent);
+      //if (IsRebin) hPtNJ = (TH1D*)RebinTH1D(hPtNJ, hRebin);
+      NormBinSize(hPtNJ);
+
+      //SetLine(hPtNJ, kMagenta+2, 23);
+      SetLine(hPtNJ,cLine[i+nType],sMark[i+nType]);
+      SetAxis(hPtNJ, YMin, YMax, XMin, XMax, "d#it{#rho}/d#it{p}_{T}");
+      if(IsSave) {file->cd(); hPtNJ->Write(Form("hPtNJ_%s", sOpt.Data()), TObject::kSingleKey);}
+      hPtNJ->Draw("same");
+      leg->AddEntry(hPtNJ,"NJ","lp");
+    }
+  }
+  leg->AddEntry(GrIncl, "Sys.Error", "f");
+  TLatex*     tex = new TLatex();
+  tex->SetNDC();
+  tex->SetTextSizePixels(24);
+  SetCanv(c1);
+  c1->SetLogy();
+  c1->SetGridy();
+  c1->SetGridx();
+  SetLegend(leg);
+  SetStyle();
+  //tex->DrawLatex(0.16, 0.91, sTex );
+  tex->DrawLatex(0.17, 0.91, "p-p #sqrt{s} = 13 TeV #Xi^{#pm}");
+  tex->DrawLatex(0.17, 0.84, sTex);
+  //tex->DrawLatex(0.17, 0.77, );
+  leg->Draw();
+  if(IsSave) { file->Close();}
+
+  return;
+}
+

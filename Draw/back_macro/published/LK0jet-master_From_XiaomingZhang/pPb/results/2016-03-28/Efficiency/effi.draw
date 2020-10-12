@@ -1,0 +1,38 @@
+#figure
+
+#name V^{0} efficiency
+#miny 0
+#maxy 1.09
+#geom 500x500
+#x #it{p}_{T}^{ V^{0}} (GeV/#it{c})
+#y Efficiency
+#comment 0.14, 0.85, 0.7, 0.7, item=ALICE item=p-Pb #sqrt{#it{s}_{NN}}=5.02 TeV item=|#eta_{V^{0}}|<0.75 tx_size=0.04
+#legend 0.62,0.5,0.9,0.88, tx_size=0.035
+
+./data/AnaEfficiency.root 		:listHist_JE_JR04_JC04_V0A_000_010/hKshortPC		:p +p20				:title=K^{0}_{s} R(V^{0},jet) < 0.4
+./data/AnaEfficiency.root 		:listHist_JE_JR04_JC04_V0A_000_010/hLambdaPC		:p +p21				:title=#Lambda R(V^{0},jet) < 0.4
+./data/AnaEfficiency.root 		:listHist_JE_JR04_JC04_V0A_000_010/hAntiLaPC		:p +p33				:title=#bar{#Lambda} R(V^{0},jet) < 0.4
+./data/AnaEfficiency.root 		:listHist_JE_JR04_JC04_V0A_000_010/hKshortJC		:p +p24				:title=K^{0}_{s} R(V^{0},jet) > 0.6
+./data/AnaEfficiency.root 		:listHist_JE_JR04_JC04_V0A_000_010/hLambdaJC		:p +p25				:title=#Lambda R(V^{0},jet) > 0.6
+./data/AnaEfficiency.root 		:listHist_JE_JR04_JC04_V0A_000_010/hAntiLaJC		:p +p27				:title=#bar{#Lambda} R(V^{0},jet) > 0.6
+
+./data/AnaEfficiency.root 		:listHist_JE_JR04_JC04_V0A_000_010/hKshortMB		:p 	+p28			:title=K^{0}_{s} Inclusive
+./data/AnaEfficiency.root 		:listHist_JE_JR04_JC04_V0A_000_010/hLambdaMB		:p 	+p30			:title=#Lambda Inclusive
+./data/AnaEfficiency.root 		:listHist_JE_JR04_JC04_V0A_000_010/hAntiLaMB		:p 	+p3			:title=#bar{#Lambda} Inclusive
+
+#figure
+#name V^{0} efficiency ratio to inclusive
+#miny 0.81
+#maxy 1.39
+#geom 500x500
+#x #it{p}_{T}^{ V^{0}} (GeV/#it{c})
+#y Efficiency ratio to inclusive
+#comment 0.14, 0.85, 0.7, 0.7, item=ALICE item=p-Pb #sqrt{#it{s}_{NN}}=5.02 TeV item=|#eta_{V^{0}}|<0.75 tx_size=0.04
+#legend 0.62,0.6,0.9,0.88, tx_size=0.035
+
+./data/AnaEfficiency.root 		:listHist_JE_JR04_JC04_V0A_000_010/hKshortPR		:p 	+p20			:title=K^{0}_{s} R(V^{0},jet) < 0.4
+./data/AnaEfficiency.root 		:listHist_JE_JR04_JC04_V0A_000_010/hLambdaPR		:p 	+p21			:title=#Lambda R(V^{0},jet) < 0.4
+./data/AnaEfficiency.root 		:listHist_JE_JR04_JC04_V0A_000_010/hAntiLaPR		:p 	+p33			:title=#bar{#Lambda} R(V^{0},jet) < 0.4
+./data/AnaEfficiency.root 		:listHist_JE_JR04_JC04_V0A_000_010/hKshortJR		:p 	+p24			:title=K^{0}_{s} R(V^{0},jet) > 0.6
+./data/AnaEfficiency.root 		:listHist_JE_JR04_JC04_V0A_000_010/hLambdaJR		:p 	+p25			:title=#Lambda R(V^{0},jet) > 0.6
+./data/AnaEfficiency.root 		:listHist_JE_JR04_JC04_V0A_000_010/hAntiLaJR		:p 	+p27			:title=#bar{#Lambda} R(V^{0},jet) > 0.6

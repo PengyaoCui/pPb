@@ -1,0 +1,18 @@
+#title ALICE p-Pb #sqrt{#it{s}_{NN}}=5.02 TeV (#Lambda+#bar{#Lambda})/K_{s}^{0} in jets
+#title (#Lambda+#bar{#Lambda})/K_{s}^{0} in jets      ALICE p-Pb #sqrt{#it{s}_{NN}}=5.02 TeV
+##comment 0.54,0.73,0.94,0.85,item=ALICE p-Pb #sqrt{#it{s}_{NN}}=5.02 TeV item=#it{p}_{T,jet}^{ch}>10 GeV/#it{c} #it{R}=0.4 item=(#Lambda+#bar{#Lambda})/K_{s}^{0}, #it{R}(V^{0},jet)<0.4
+#comment 0.60,0.60,0.94,0.80,item=#it{p}_{#it{T},jet}^{ ch}>10 GeV/#it{c} item=#it{R}=0.4 item=#it{R}(V^{0},jet)<0.4 tx_size=0.035
+
+#geom 500x500
+#legend 0.25,0.6,0.7,0.85 tx_size=0.035
+#x p_{#it{T}}^{V^{0}} (GeV/#it{c})
+#y Relative systematic uncertainty
+#miny 0
+#maxy 0.37
+#logy false
+#xrange 1, 12
+
+./data/AnaSystematic.root	:list_JC04_JR04_PtJ10/hRatioVErrHD_list_JR04_JC04_ZNA_000_100_PtJ10_GetRatioVStatHD			:hist 			:title=Total
+./data/AnaSystematic.root	:list_JC04_JR04_PtJ10/hRatioVErrJE_HD_list_JR04_JC04_ZNA_000_100_PtJ10_GetRatioVStatHD		:hist 			:title=V^{0} reconstruction
+./data/AnaSystematic.root	:list_JC04_JR04_PtJ10/hRatioVErrJC_HD_list_JR04_JC04_ZNA_000_100_PtJ10_GetRatioVStatHD		:hist 			:title=Jet #it{p}_{T}
+./data/AnaSystematic.root	:list_JC04_JR04_PtJ10/hRatioVErrUE_HD_list_JR04_JC04_ZNA_000_100_PtJ10_GetRatioVStatHD		:hist 			:title=UE subtraction

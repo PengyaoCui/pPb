@@ -1,0 +1,12 @@
+/*.pdf
+
+*_diff.tex
+*_diff.bib
+*.aux
+*.bbl
+*.blg
+*.out
+*.log
+*.loc
+
+/.build

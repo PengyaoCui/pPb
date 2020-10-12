@@ -1,0 +1,240 @@
+%!TEX root = ../AliPubV0JetspPb.tex
+
+\newcommand{\ev}           {\ensuremath{\mathrm{eV}}} 
+\newcommand{\kev}          {\ensuremath{\mathrm{keV}}}  
+\newcommand{\mev}          {\ensuremath{\mathrm{MeV}}}
+\newcommand{\mevc}         {\ensuremath{\mathrm{MeV}/c}}    
+\newcommand{\mevcc}        {\ensuremath{\mathrm{MeV}/c^2}}     
+\newcommand{\gev}          {\ensuremath{\mathrm{GeV}}}  
+\newcommand{\gevc}         {\ensuremath{\mathrm{GeV}/c}}    
+\newcommand{\GeVc}         {\ensuremath{\mathrm{GeV}/c}}    
+\newcommand{\gevcc}        {\ensuremath{\mathrm{GeV}/c^{2}}}    
+\newcommand{\tev}          {\ensuremath{\mathrm{TeV}}}  
+\newcommand{\tevc}         {\ensuremath{\mathrm{TeV}/c}}    
+
+\newcommand{\etal}         {\ensuremath{\eta_{\mathrm{lab}}}}
+\newcommand{\dNdetal}      {\mathrm{d}N_\mathrm{ch}/\mathrm{d}\etal}
+\newcommand{\dNdetatrl}    {\mathrm{d}N_\mathrm{tracklets}/\mathrm{d}\etal}
+\newcommand{\dNdetarl}[1]  {\mathrm{d}N_\mathrm{ch}/\mathrm{d}\etal\left.\right|_{|\etal|<#1}}
+\newcommand{\etac}         {\ensuremath{\eta_{\mathrm{cms}}}}
+\newcommand{\dNdetac}      {\mathrm{d}N_\mathrm{ch}/\mathrm{d}\etac}
+\newcommand{\dNdetatrc}    {\mathrm{d}N_\mathrm{tracklets}/\mathrm{d}\etac}
+\newcommand{\dNdetarc}[1]  {\mathrm{d}N_\mathrm{ch}/\mathrm{d}\etal\left.\right|_{|\etac|<#1}}
+\newcommand{\vn}           {\ensuremath{v_{n}}}
+\newcommand{\vngf}         {\ensuremath{v_{n} \{ GF \} }}
+\newcommand{\vnd}          {\ensuremath{V_{n\Delta}}}
+\newcommand{\voned}        {\ensuremath{V_{1\Delta}}}
+\newcommand{\ptt}          {\ensuremath{p_{\mathrm{T, trig}}}}
+\newcommand{\pta}          {\ensuremath{p_{\mathrm{T, assoc}}}}
+\newcommand{\CF}           {\ensuremath{C \left(\Delta \phi \right)}}
+\newcommand{\same}         {\ensuremath{frac{d\langle n_{\mathrm{same}}^{AB} \rangle}{d\Delta\phi}}}
+\newcommand{\mix}          {\ensuremath{frac{d\langle n_{\mathrm{mix}}^{AB} \rangle}{d\Delta\phi}}}
+\newcommand{\ITS}          {\rm{ITS}}
+\newcommand{\TOF}          {\rm{TOF}}
+\newcommand{\ZNA}          {\rm{ZNA}}
+\newcommand{\ZNC}          {\rm{ZNC}}
+\newcommand{\ZDC}          {\rm{ZDC}}
+\newcommand{\ZDCs}         {\rm{ZDCs}}
+\newcommand{\SPD}          {\rm{SPD}}
+\newcommand{\SDD}          {\rm{SDD}}
+\newcommand{\SSD}          {\rm{SSD}}
+\newcommand{\TPC}          {\rm{TPC}}
+\newcommand{\VZERO}        {\rm{VZERO}}
+\newcommand{\VZEROA}       {\rm{VZERO-A}}
+\newcommand{\VZEROC}       {\rm{VZERO-C}}
+\newcommand{\dg}           {\mbox{$^\circ$}}
+\newcommand{\pp}           {\text{pp}}
+\newcommand{\ppbar}        {\mbox{$\mathrm{p\overline{p}}$}}
+\newcommand{\mpp}          {\mathrm{pp}}
+\newcommand{\PbPb}         {\mbox{Pb--Pb}}
+\newcommand{\AuAu}         {\mbox{Au--Au}}
+\newcommand{\pPb}          {\mbox{p--Pb}}
+\newcommand{\pA}           {\mbox{p--A}}
+\newcommand{\Pbp}          {\mbox{Pb--p}}
+\newcommand{\dAu}          {\mbox{d--Au}}
+\newcommand{\pAu}          {\mbox{p--Au}}
+\newcommand{\pseudorap}    {\mbox{$\left | \eta \right | $}}
+\newcommand{\lum}          {\, \mbox{${\mathrm{cm}}^{-2} {\mathrm{s}}^{-1}$}}
+\newcommand{\barn}         {\, \mbox{${\mathrm{barn}}$}}
+\newcommand{\m}            {\, \mbox{${\mathrm{m}}$}}
+\newcommand{\pt}           {\ensuremath{p_{\mathrm{T}}}}
+\newcommand{\ptjet}        {\ensuremath{p_{\mathrm{T}}^{\mathrm{jet}}}}
+\newcommand{\pT}           {\ensuremath{p_{\mathrm{T}}}}
+\newcommand{\mt}           {\ensuremath{m_{\mathrm{t}}}}
+\newcommand{\snn}          {\ensuremath{\sqrt{s_{\mathrm{NN}}}}}
+\newcommand{\sqrtsnn}[1]   {\ensuremath{\sqrt{s_{\mathrm{NN}}}=#1~\mathrm{TeV}}}
+\newcommand{\sqrts}[1]     {\ensuremath{\sqrt{s}=#1~\mathrm{TeV}}}
+\newcommand{\sqts}         {\sqrt{s}}
+\newcommand{\snnbf}        {\ensuremath{\mathbf{{\sqrt{s_{\mathbf NN}}}}}}
+\newcommand{\sonly}        {\ensuremath{\sqrt{s}}}
+\newcommand{\Npart}        {\ensuremath{N_\mathrm{part}}}
+\newcommand{\avNpart}      {\ensuremath{\langle N_\mathrm{part} \rangle}}
+\newcommand{\avNpartdata}  {\ensuremath{\langle N_\mathrm{part}^{\mathrm{data}} \rangle}}
+\newcommand{\Ncoll}        {\ensuremath{N_\mathrm{coll}}}
+\newcommand{\Dnpart}       {\ensuremath{D\left(\Npart\right)}}
+\newcommand{\DnpartExp}    {\ensuremath{D_{\mathrm{exp}}\left(\Npart\right)}}
+\newcommand{\abs}[1]       {\ensuremath{\left|#1\right|}}
+\newcommand{\avg}[1]       {\ensuremath{\left\langle#1\right\rangle}}
+\newcommand{\signn}        {\ensuremath{\sigma^{\mathrm{inel.}}_{\mathrm{NN}}}}
+\newcommand{\vz}           {\ensuremath{V_{z}}}
+\newcommand{\dd}           {\ensuremath{\mathrm{d}}}
+\newcommand{\ade}          {\ensuremath{\abs{\Delta\eta}}}
+\newcommand{\Dphi}         {\ensuremath{\Delta\varphi}}
+\newcommand{\Deta}         {\ensuremath{\Delta\eta}}
+\newcommand{\Ntrig}        {\ensuremath{N_{\mathrm{trig}}}}
+\newcommand{\Nassoc}       {\ensuremath{N_{\mathrm{assoc}}}}
+\newcommand{\dNassoc}      {\ensuremath{\frac{\dd^2N_{\mathrm{assoc}}}{\dd\Deta\dd\Dphi}}}
+\newcommand{\stat}         {({\it stat.})}
+\newcommand{\syst}         {({\it sys.})}
+\newcommand{\Fig}[1]       {Fig.~\ref{#1}}
+\newcommand{\Figure}[1]    {Figure~\ref{#1}}
+\newcommand{\Sect}[1]      {Sect.~\ref{#1}}
+\newcommand{\Section}[1]   {Section~\ref{#1}}
+\newcommand{\Sections}[1]  {Sections~\ref{#1}}
+\newcommand{\Eq}[1]        {Eq.~\ref{#1}}
+\newcommand{\Equation}[1]  {Equation~\ref{#1}}
+\newcommand{\Ref}[1]       {Ref.~\cite{#1}}
+\newcommand{\Refs}[1]      {Refs.~\cite{#1}}
+\newcommand{\green}[1]     {\textcolor{green}{#1}}
+\newcommand{\blue}[1]      {\textcolor{blue}{#1}}
+\newcommand{\red}[1]       {\textcolor{red}{#1}}
+\newcommand{\white}[1]     {\textcolor{white}{#1}}
+\newcommand{\warn}[1]      {{\small\textbf{\red{(!}\footnote{\textbf{\red{(!)}}~#1}\red{)}}}\marginpar{\textbf{\red{---}}}}
+\newcommand{\todo}[1]      {{\textcolor{red}{TODO: #1}}}
+\newcommand{\high}[1]      {{\textcolor{blue}{#1}}}
+\newcommand{\fake}[1]      {{\textcolor{red}{#1}}}
+\newcommand{\final}[1]     {{\textcolor{blue}{#1}}}
+\newcommand{\prelim}[1]    {{\textcolor{magenta}{#1}}}
+\newcommand{\orig}[1]      {{\textcolor{red}{\sout{#1}}}}
+\newcommand{\repl}[1]      {{\textcolor{blue}{#1}}}
+\newcommand*{\doi}[1]      {\href{http://dx.doi.org/#1}{doi: #1}}
+\newcommand{\arxiv}[1]     {\href{http://www.arxiv.org/abs/#1}{\mbox{arXiv:#1}}}
+\newcommand{\com}[1]       {}
+\newcommand{\expval}[1]    {\langle #1 \rangle}
+\newcommand{\RAA}          {\ensuremath{R_{\mathrm{AA}}}}
+\newcommand{\Journal}[1]   {{\bf{#1}}}
+\newcommand{\PRC}          {Phys.~Rev.~C~}
+\newcommand{\PLB}          {Phys.~Lett.~B~}
+
+\iflatexdiff
+\newcommand{\blu}[1]       {\textcolor{blue}{#1}}
+\renewcommand{\xout}[1]    {\textcolor{red}{\sout{#1}}}
+\newcommand{\ask}[1]       {\textcolor{magenta} {#1} } 
+\else
+\newcommand{\blu}[1]       {#1}
+\renewcommand{\xout}[1]    {}
+\newcommand{\ask}[1]       {}
+\fi
+
+\newcommand{\av}[1]        {\left\langle #1 \right\rangle}
+\newcommand{\lsim}         {\,{\buildrel < \over {_\sim}}\,}
+\newcommand{\gsim}         {\,{\buildrel > \over {_\sim}}\,}
+\newcommand{\fm}           {\mathrm{fm}}
+\newcommand{\mm}           {\mathrm{mm}} 
+\newcommand{\cm}           {\mathrm{cm}}
+%%\newcommand{\m}          {\mathrm{m}}
+\newcommand{\mum}          {\mathrm{\mu m}}
+\newcommand{\secs}         {\mathrm{s}}
+\newcommand{\ns}           {\mathrm{ns}}
+\newcommand{\mrad}         {\mathrm{mrad}}
+\newcommand{\mb}           {\mathrm{mb}}
+\newcommand{\mub}          {\mathrm{\mu b}}
+\newcommand{\T}            {\mathrm{T}}
+\newcommand{\dNdy}         {{\rm d}N_{ch}/{\rm d}y}
+\newcommand{\momwin}       {[$p$, $p$+$\Delta$ $p$]}
+\newcommand{\DtoKpi}       {{\rm D}^0 \to {\rm K}^-\pi^+}
+\newcommand{\DtoKpipi}     {{\rm D}^+\to {\rm K}^-\pi^+\pi^+}
+\newcommand{\DstartoDpi}   {{\rm D}^{*+} \to {\rm D}^0 \pi^+}
+\newcommand{\Dzero}        {{\rm D^0}}
+\newcommand{\Dzerobar}     {\overline{{\rm D^0}}}
+\newcommand{\Dstar}        {{\rm D^{*+}}}
+\newcommand{\Dstarm}       {{\rm D^{*-}}}
+\newcommand{\Dplus}        {{\rm D^+}}
+\newcommand{\Dminus}       {{\rm D^-}}
+\newcommand{\Ds}           {{\rm D^+_{\rm s}}}
+\newcommand{\Lc}           {{\rm \Lambda^+_{\rm c}}}
+\newcommand{\ccbar}        {${\rm c}\bar{\rm c}$~}
+\newcommand{\bbbar}        {${\rm b}\bar{\rm b}$~}
+\newcommand{\nbinv}        {{\rm nb^{-1}}}
+\newcommand{\decleng}      {{\rm L}_{xyz}}
+\newcommand{\cubar}        {{\rm c}\bar{\rm u}}
+\newcommand{\cdbar}        {{\rm c}\bar{\rm d}}
+\newcommand{\mur}          {\mu_{\rm R}}
+\newcommand{\muf}          {\mu_{\rm F}}
+\newcommand{\mc}           {m_{\rm c}}
+\newcommand{\sigmatot}     {\sigma_{\rm tot}}
+\newcommand{\Ntrk}         {N_{\rm tracklets}}
+\newcommand{\Nvzero}       {N_{\rm V0}}
+\newcommand{\fB}           {f_{\rm B}}
+
+\newcommand{\pip}          {\ensuremath{\pi^{+}}}
+\newcommand{\pim}          {\ensuremath{\pi^{-}}}
+\newcommand{\kap}          {\ensuremath{\rm{K}^{+}}}
+\newcommand{\kam}          {\ensuremath{\rm{K}^{-}}}
+\newcommand{\pbar}         {\ensuremath{\overline{\rm p}}}
+\newcommand{\degree}       {\ensuremath{^{\rm o}}}
+\newcommand{\dedx}         {\ensuremath{{\rm d}E/{\rm d}x}}
+\newcommand{\jpsi}         {\ensuremath{{\rm J}/\psi}}
+\newcommand{\psip}         {\ensuremath{\psi^{\prime}}}
+\newcommand{\jpsiDY}       {\rm J/$\psi$\,/\,DY}
+\newcommand{\chic}         {\ensuremath{\chi_{\rm c}}}
+\newcommand{\ezdc}         {\ensuremath{E_{\rm ZDC}}}
+\newcommand{\slfrac}[2]    {\left.#1\right/#2}
+\newcommand{\dndydpT}      {\ensuremath{{\rm d}^{2}N/{\rm d}y{\rm d}p_{\rm T}}}
+\newcommand{\Kshort}       {\ensuremath{{\rm K}_{\rm S}^{0}}}
+\newcommand{\ks}           {\ensuremath{\rm{K}^{0}_{\rm S}}}
+\newcommand{\lda}     	   {\ensuremath{\Lambda}}
+\newcommand{\alda}         {\ensuremath{\overline{\Lambda}}}
+\newcommand{\AntiLa}       {\ensuremath{\overline{\Lambda}}}
+\newcommand{\Vzero}        {\ensuremath{{\rm V}^{0}}}
+\newcommand{\Vzeros}       {\ensuremath{{\rm V}^{0}{\rm s}}}
+\newcommand{\kT}           {\ensuremath{k_{\rm T}}}
+\newcommand{\akT}           {\ensuremath{{\rm anti-}k_{\rm T}}}
+
+\newcommand{\dNdetapt}     {\ensuremath{\dNdeta\,/\left(0.5\Npart\right)}}
+\newcommand{\dNdetaptr}[1] {\ensuremath{\dNdetar{#1}\,/\left(0.5\Npart\right)}}
+\newcommand{\dNdetape}     {\ensuremath{\left(\dNdeta\right)/\left(\avNpart/2\right)}}
+\newcommand{\dNdetaper}[1] {\ensuremath{\dNdetar{#1}\,/\left(\avNpart/2\right)}}
+\newcommand{\dndy}         {\ensuremath{{\mathrm{d}N/{\mathrm{d}y}}}}
+\newcommand{\dndydpt}      {\ensuremath{{\mathrm{d}}^2N/({\mathrm{d}}y {\mathrm{d}}\pt)}}
+\newcommand{\dNdeta}       {\mathrm{d}N_\mathrm{ch}/\mathrm{d}\eta}
+\newcommand{\dNdetatr}     {\mathrm{d}N_\mathrm{tracklets}/\mathrm{d}\eta}
+\newcommand{\dNdetar}[1]   {\mathrm{d}N_\mathrm{ch}/\mathrm{d}\eta\left.\right|_{|\eta|<#1}}
+\newcommand{\dNdEta}       {{\rm d}N_{\rm ch}/{\rm d}\eta}
+
+\newcommand{\bT}           {\ensuremath{\beta_{\rm T}}}
+\newcommand{\avbT}         {\ensuremath{\left< \beta_{\rm T}\right>}}
+\newcommand{\avpT}         {\ensuremath{\left< \pt \right>}}
+\newcommand{\muB}          {\ensuremath{\mu_{B}}}
+\newcommand{\kzero}        {\ensuremath{{\rm K}^{0}_{S}}}
+\newcommand{\vzero}        {\ensuremath{{\rm V}^0}}
+\newcommand{\lmb}          {\ensuremath{\Lambda}}
+\newcommand{\almb}         {\ensuremath{\bar{\Lambda}}}
+\newcommand{\Tfo}          {\ensuremath{{T}_{\rm kin}}}
+\newcommand{\Tch}          {\ensuremath{{T}_{\rm ch}}}
+\newcommand{\hlab}         {\ensuremath{\eta_{\rm lab}}}
+\newcommand{\ynn}         {\ensuremath{y_{\rm NN}}}
+\newcommand{\ycms}         {\ensuremath{y_{\rm CMS}}}
+\newcommand{\ylab}         {\ensuremath{y_{\rm lab}}}
+
+\newcommand{\tn}[1]{\textnormal{#1}}
+\newcommand{\eq}[2]{\begin{equation}\label{#1} #2 \end{equation}}
+\newcommand{\eqa}[2]{\begin{align}\label{#1} #2 \end{align}}
+\newcommand{\braces}[1]{\left ( #1 \right )}
+\newcommand{\typew}[1]{\texttt{#1}}
+%\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\median}[1]{\tn{median}\left\{ #1 \right\}}
+\newcommand{\mean}[1]{\tn{mean}\left\{ #1 \right\}}
+%Common units
+%\newcommand{\cm}[0]{\tn{ cm}}
+\newcommand{\TeV}[0]{\tn{ TeV}}
+\newcommand{\GeV}[0]{\tn{ GeV}}
+\newcommand{\aliroot}[0]{\typew{aliroot}}
+\newcommand{\kt}{\ensuremath{k_\tn{T}}}
+%\newcommand{\kT}{\kt}
+%\newcommand{\pt}{\ensuremath{p_\tn{T}}}\newcommand{\pT}{\pt}
+\newcommand{\ptch}{\ensuremath{p_\mathrm{T,\,ch\;jet}}}
+\newcommand{\deltaptch}{\ensuremath{\delta p_\mathrm{T,\,ch}}}
+
+\newcommand{\Ajet} 			{\ensuremath{A^{\mathrm{jet}}}}
+%%\newcommand{\ptjet} 		{\ensuremath{\pt^{\mathrm{jet}}}}

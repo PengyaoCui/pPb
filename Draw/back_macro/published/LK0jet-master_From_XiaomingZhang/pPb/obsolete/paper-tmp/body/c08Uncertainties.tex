@@ -1,0 +1,60 @@
+%!TEX root = ../AliPubV0JetspPb.tex
+
+\section{Systematic uncertainties}
+\label{sec:uncertainties}
+
+\ask{sections below need more quant. and phrasing to be checked; also add a summary figure as a function \pt}
+
+The systematic uncertainties on the particle spectra and their ratios originating from the sources discussed below are added in quadrature.
+
+\subsection{Uncertainties in \Vzero\ particle reconstruction}
+
+The dominant sources of the systematic uncertainties for the \Vzero particle reconstruction are summarized in Table \ref{tab:v0syst}.
+
+\begin{table}[t]
+\centering 
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lccc}
+\hline
+&&&\\[-0.7em]
+ & \kzero\ & \multicolumn{2}{c}{\lmb(\almb)}\\[0.3em]
+\hline
+&&&\\[-0.7em]
+Proper lifetime & 2\% & \multicolumn{2}{c}{2\%} \\[0.3em]
+Material budget & 4\% & \multicolumn{2}{c}{4\%} \\[0.3em]
+Track selection  & 4\% & \multicolumn{2}{c}{4\%} \\[0.3em]
+TPC PID & 1\% & \multicolumn{2}{c}{1\%} \\[0.3em]
+Multiplicity & \multirow{2}{*}{2\%} & \multicolumn{2}{c}{\multirow{2}{*}{2\%}} \\
+dependence & & \\[0.3em]
+\hline
+\hline
+&&&\\[-0.7em]
+\pt\ (\gevc)  &  & $<$ 3.7 & $>$ 3.7\\[0.3em]
+\hline
+&&&\\[-0.7em]
+Feed-down  &  & \multirow{2}{*}{5\%} & \multirow{2}{*}{7\%}\\
+correction & & &\\[0.3em]
+    \hline
+    \hline
+    &&&\\[-0.7em]
+\pt\ (\gevc)  &  & $<$ 3.7 & $>$ 3.7\\[0.3em]
+    \hline
+    &&&\\[-0.7em]
+    Total & 6.5\% & 8\% & 9.5\% \\[0.3em]
+\hline
+\end{tabular*}
+\caption{Main sources of systematic uncertainty for the \kzero\ and \lmb(\almb).} \label{tab:v0syst}
+\end{table}
+
+\subsection{Uncertainty in UE \Vzero\ estimation}
+
+The uncertainties originating from the mis-association of \Vzero particles with UE were considered. The two main sources arise from cases where:
+\begin{itemize}
+\item the \Vzero\ particle was found outside the selected jet and classified as UE particle; however, it may have originated by a physical jet outside the fiducial acceptance for jets considered in the analysis and/or originates from a true low-\pt jet, below the considered thresholds;
+\item the \Vzero\ particle originates from true high-\pt jet; however, due to the finite detector efficiency the jet has not been reconstructed above the considered \pt\ thresholds.
+\end{itemize}
+The uncertainty on the UE \Vzero density has been estimated using the two variations of the UE estimators: the OC and the NJ. The difference in the reconstructed \Vzero\ yields with the different estimators has been included as the additional systematic uncertainties on the yield of particles within the jets.
+
+\subsection{Jet reconstruction and jet selection}
+
+The systematic uncertainty originating from the selection of the jet \pt\ were estimated by repeating the analysis with jet \pt\ varied around the chosen 10 and 20 \gevc\ thresholds by 2 \gevc. This variation accounts for jet resolution due to detector effects and the fluctuations of the event background density as reported in \cite{Adam:2015hoa}. \ask{numbers needed}. 
+

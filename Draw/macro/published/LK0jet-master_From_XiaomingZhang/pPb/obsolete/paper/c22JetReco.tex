@@ -1,0 +1,27 @@
+\subsection{Jet reconstruction}
+\label{sec:JetReco}
+
+In this Letter, the hard scatterings are tagged by the charged particle jets.
+
+Charged particles were reconstructed as tracks in the ITS and the TPC and required to point close to the primary vertex measured by the SPD.
+Due to the SPD inefficient, azimuthal distribution of these high quality tracks is not fully uniform and causes the biases of the jet reconstruction algorithm.
+This was compensated by tracks without reconstructed track points in the SPD.
+For those tracks, the primary vertex is used as an additional constraint in the track fitting to improve the momentum resolution.
+The combined track sample is called as the hybrid tracks.
+The fraction of additional tracks (without SPD track points) is $\sim 4.3\%$ of the hybrid tracks.
+For each track, the Distance-of-Closest Approach (DCA) to primary vertex is required $<2.4$~cm in transverse plane and $<3.1$~cm along the beam direction.
+With this criterion, the tracks generated in detector material and from the weak decays are removed, the residual contamination is $\sim 10\%$ in $\pT<1~\GeVc$.
+The overall efficiency for charged particle detection is $70\%$ at $\pT=0.15~\GeVc$ and increases to $85\%$ at $\pT=1~\GeVc$ and above.
+In present analysis, the tracks in $\pT>0.15~\GeVc$ and $\abs{\hlab}<0.9$ are used in jet reconstruction. \ask{-- The description of the hybrid tracks is too long, can this be simplified?}
+
+The jets have been reconstructed using the anti-$\kT$ algorithm~\cite{Cacciari:2008gp} from the FastJet package~\cite{Cacciari:2011ma,Cacciari:2005hq} with resolution parameters of $R=0.2$, $0.3$ and $0.4$. In the further analysis, the jets were considered if the jet-axis in the acceptance window $\abs{\hlab}<0.35$, which fully constrains the jets within the acceptances of both charged particle tracks ($\abs{\hlab}<0.9$) and $\Vzero$s ($\abs{\hlab}<0.75$, see section~\ref{sec:V0Reco} for the details) with all different used resolution parameters.
+The analysis technique was described in detail in~\cite{Adam:2015hoa,Abelev:2013kqa}, hereafter is a brief review of the most relevant points.
+
+In general, the background originating from the underlying event and/or pile-up (particles not associated to the hard scattering) impacts on the reconstructed jet energy.
+The correction of the jet transverse momentum ($\pT[jet]^{\rm ch}$) scale accounting for the transverse background energy density, $\rho^{\rm ch}$, which can be estimated on event-by-event basis using the median of all jet candidate clusters $\pT$ reconstructed with the $\kT$ algorithm per unit area~\cite{Cacciari:2007fd,Abelev:2013kqa},
+\begin{equation}
+\pT[jet]^{\rm ch}=\pT[jet]^{\rm ch,raw}-\rho^{\rm ch}A_{\rm jet}^{\rm ch},
+\end{equation}
+where,  $A_{\rm jet}^{\rm ch}$  and $\pT[jet]^{\rm ch,raw}$ are the measured area~\cite{Cacciari:2008gn} and transverse momentum for the charged particle jets.
+To further correct the fluctuations, caused by the more sparse environment of p--Pb events, of background density, an approach described in~\cite{Chatrchyan:2012tt} was employed.
+The resulting mean and various of background density is $\avg{\rho^{\rm ch}}=1.02~\GeVc\times$rad$^{-1}$ and $\sigma(\rho^{\rm ch})=0.91~\GeVc\times$rad$^{-1}$ for all events and, $\avg{\rho^{\rm ch}}=2.2~\GeVc\times$rad$^{-1}$ and $\sigma(\rho^{\rm ch})=1.47~\GeVc\times$rad$^{-1}$ for events containing jet within $\pT[jet]^{\rm ch,raw}>20~\GeVc$~\cite{Adam:2015hoa}.

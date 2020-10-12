@@ -1,0 +1,38 @@
+Table \ref{tab:v0cuts} presents the topological cuts applied on the candidate tracks of the decays daughters. 
+
+\ask{See how much details is needed - since all follows from \cite{Abelev:2013haa}.}
+
+The selection criteria used to define $\Vzero$ candidates are listed in table~\ref{tab:v0cuts} (see \cite{Aamodt:2011zza} for details).
+
+The $\Vzero$ decay-product tracks are selected in the acceptance window $\abs{\hlab}<0.8$, only the candidates reconstructed in $\abs{\hlab}<0.75$ are retained to keep $>50\%$ of acceptance and reconstruction efficiency at plateau around $\hlab=0$ \ask{(is it clear or is it needed?)}.
+A five-standard-deviation particle-identification cut was applied on the difference between $\dedx$ in the TPC and that defined by parameterized Bethe-Bloch curve for the $\Vzero$ decay-product tracks.
+In addition, by using proper lifetime selection coupled to a momentum independent cosine of pointing angle ($\cos\theta_{\rm pointing}$) selection of $\cos\theta_{\rm pointing}>0.995$ majority of secondary $\lda$ ($\alda$) generated in detector material are removed.
+The residual contamination entering the selections was $<1\%$ and was neglected~\cite{Abelev:2013xaa}.
+The yield of $\Vzero$ signal is extracted from the invariant mass, $M_{\rm inv}$, distribution of identified $\Vzero$ candidates subtracting the combinatory background from the peak region with the bin counting method.
+The background was determined by fitting first order polynomials to sideband regions.
+The signal region and sidebands are defined on the basis of the $\pT$-dependent mass resolution as the windows in $\abs{M_{\rm inv}-M_{0}}<6\sigma$ and $6\sigma<\abs{M_{\rm inv}-M_{0}}<12\sigma$, respectively, where $M_{0}$ and $\sigma$ are the mean and width of invariant mass distribution extracted by the Gaussian fit.
+
+\begin{table}[t]
+  \centering
+  \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lr}
+    \hline
+    &\\[-0.7em]
+    Selection variable & Cut value \\[0.3em]
+    \hline
+    &\\[-0.7em]
+    2D decay radius & $>0.50$~cm \\[0.3em]
+    Daughter track DCA to primary vertex & $>0.06~$cm \\[0.3em]
+    DCA between daughter tracks & $<1.0~\sigma$ \\[0.3em]
+    Cosine of pointing angle (\kzero) & $>0.97$ \\[0.3em]
+    & ($<1\%$ signal loss) \\[0.3em]
+    Cosine of pointing angle (\lmb\ and \almb) & $>0.995$ \\[0.3em]
+    & ($<1\%$ signal loss) \\[0.3em]
+    Proper lifetime (\kzero) & $<20$~cm \\[0.3em]
+    Proper lifetime (\lmb\ and \almb) & $<30$~cm \\[0.3em]   
+    \kzero\ mass rejection window (\lmb\ and \almb) & $\pm 10$~\mevc\ \\[0.3em]
+    \lmb\ and \almb\ mass rejection window (\kzero) & $\pm 5$~\mevc\ \\[0.3em]
+    \hline
+  \end{tabular*}
+  \caption{\vzero\ topological selection cuts (DCA: distance-of-closest approach). \ask{check if the cos theta \pt\ dependent(?)}}
+  \label{tab:v0cuts}
+\end{table}

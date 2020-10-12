@@ -1,0 +1,13 @@
+#figure
+#title: ./pPb/s2f_cL2K_Pt_Comp_JC02_V0A_000_010_PtJ10.root.draw
+/Users/ploskon/devel/LK0jet/utils/pPb/s2f_cL2K_Pt_Comp_JC02_V0A_000_010_PtJ10.root 		:hframe :hist : title=
+/Users/ploskon/devel/LK0jet/utils/pPb/s2f_cL2K_Pt_Comp_JC02_V0A_000_010_PtJ10.root 		:grErr_hRatioV_Ubkg_Stat :hist : title=grErr_
+/Users/ploskon/devel/LK0jet/utils/pPb/s2f_cL2K_Pt_Comp_JC02_V0A_000_010_PtJ10.root 		:grErr_hRatioV_Ubkg_Stat :hist : title=grErr_
+/Users/ploskon/devel/LK0jet/utils/pPb/s2f_cL2K_Pt_Comp_JC02_V0A_000_010_PtJ10.root 		:gRatioV_Incl_Syst :hist : title=Graph
+/Users/ploskon/devel/LK0jet/utils/pPb/s2f_cL2K_Pt_Comp_JC02_V0A_000_010_PtJ10.root 		:hRatioV_Incl_Stat :hist : title=
+/Users/ploskon/devel/LK0jet/utils/pPb/s2f_cL2K_Pt_Comp_JC02_V0A_000_010_PtJ10.root 		:grErr_hRatioV_JR02_Stat :hist : title=grErr_
+/Users/ploskon/devel/LK0jet/utils/pPb/s2f_cL2K_Pt_Comp_JC02_V0A_000_010_PtJ10.root 		:grErr_hRatioV_JR02_Stat :hist : title=grErr_
+/Users/ploskon/devel/LK0jet/utils/pPb/s2f_cL2K_Pt_Comp_JC02_V0A_000_010_PtJ10.root 		:grErr_hRatioV_JR04_Stat :hist : title=grErr_
+/Users/ploskon/devel/LK0jet/utils/pPb/s2f_cL2K_Pt_Comp_JC02_V0A_000_010_PtJ10.root 		:grErr_hRatioV_JR04_Stat :hist : title=grErr_
+/Users/ploskon/devel/LK0jet/utils/pPb/s2f_cL2K_Pt_Comp_JC02_V0A_000_010_PtJ10.root 		:grErr_hRatioV_JR03_Stat :hist : title=grErr_
+/Users/ploskon/devel/LK0jet/utils/pPb/s2f_cL2K_Pt_Comp_JC02_V0A_000_010_PtJ10.root 		:hRatioV_JR03_Stat :hist : title=

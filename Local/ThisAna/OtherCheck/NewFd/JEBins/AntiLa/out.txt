@@ -1,0 +1,218 @@
+
+Processing runLocalStrangeJets.C...
+Info in <TUnixSystem::ACLiC>: creating shared library /afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliPicoBaseDev_cxx.so
+Info in <TUnixSystem::ACLiC>: creating shared library /afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliPicoCascade_cxx.so
+Error in cling::AutoloadingVisitor::InsertIntoAutoloadingState:
+   Missing FileEntry for /build/workarea/sw/20156082/1/SOURCES/KFParticle/alice-v1.1-1/alice/v1.1-1/KFParticle/KFParticleBase.h
+   requested to autoload type KFParticleBase
+Error in cling::AutoloadingVisitor::InsertIntoAutoloadingState:
+   Missing FileEntry for /build/workarea/sw/20156082/1/SOURCES/KFParticle/alice-v1.1-1/alice/v1.1-1/KFParticle/KFParticle.h
+   requested to autoload type KFParticle
+Error in cling::AutoloadingVisitor::InsertIntoAutoloadingState:
+   Missing FileEntry for /build/workarea/sw/20156082/1/SOURCES/KFParticle/alice-v1.1-1/alice/v1.1-1/KFParticle/KFVertex.h
+   requested to autoload type KFVertex
+Error in cling::AutoloadingVisitor::InsertIntoAutoloadingState:
+   Missing FileEntry for /build/workarea/sw/20156082/1/SOURCES/KFParticle/alice-v1.1-1/alice/v1.1-1/KFParticlePerformance/KFPartEfficiencies.h
+   requested to autoload type KFPartEfficiencies
+Error in cling::AutoloadingVisitor::InsertIntoAutoloadingState:
+   Missing FileEntry for /build/workarea/sw/20156082/1/SOURCES/KFParticle/alice-v1.1-1/alice/v1.1-1/KFParticlePerformance/KFMCParticle.h
+   requested to autoload type KFMCParticle
+Error in cling::AutoloadingVisitor::InsertIntoAutoloadingState:
+   Missing FileEntry for /build/workarea/sw/20156082/1/SOURCES/KFParticle/alice-v1.1-1/alice/v1.1-1/KFParticleTest/KFParticleTest.h
+   requested to autoload type KFParticleTest
+In file included from /cvmfs/alice.cern.ch/el6-x86_64/Packages/AliPhysics/vAN-20200428_ROOT6-1/include/AliPicoV0RD.h:4:0,
+                 from /afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliPicoCascade.cxx:5,
+                 from /afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliPicoCascade_cxx_ACLiC_dict.cxx:40:
+/cvmfs/alice.cern.ch/el6-x86_64/Packages/AliPhysics/vAN-20200428_ROOT6-1/include/AliPicoV0.h:42:3: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   const Double_t RapidityKa() const;
+   ^~~~~
+/cvmfs/alice.cern.ch/el6-x86_64/Packages/AliPhysics/vAN-20200428_ROOT6-1/include/AliPicoV0.h:43:3: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   const Double_t RapidityLa() const;
+   ^~~~~
+In file included from /afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliPicoCascade.cxx:7:0,
+                 from /afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliPicoCascade_cxx_ACLiC_dict.cxx:40:
+/afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliPicoCascade.h:43:3: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   const Double_t RapidityXi() const;
+   ^~~~~
+/afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliPicoCascade.h:44:3: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   const Double_t RapidityOmega() const;
+   ^~~~~
+In file included from /afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliPicoCascade_cxx_ACLiC_dict.cxx:40:0:
+/afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliPicoCascade.cxx:424:1: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+ const Double_t AliPicoCascade::RapidityXi() const
+ ^~~~~
+/afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliPicoCascade.cxx:437:1: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+ const Double_t AliPicoCascade::RapidityOmega() const
+ ^~~~~
+Info in <TUnixSystem::ACLiC>: creating shared library /afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliPicoCascadeRD_cxx.so
+In file included from /cvmfs/alice.cern.ch/el6-x86_64/Packages/AliPhysics/vAN-20200428_ROOT6-1/include/AliPicoV0RD.h:4:0,
+                 from /afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliPicoCascadeRD.cxx:4,
+                 from /afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliPicoCascadeRD_cxx_ACLiC_dict.cxx:40:
+/cvmfs/alice.cern.ch/el6-x86_64/Packages/AliPhysics/vAN-20200428_ROOT6-1/include/AliPicoV0.h:42:3: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   const Double_t RapidityKa() const;
+   ^~~~~
+/cvmfs/alice.cern.ch/el6-x86_64/Packages/AliPhysics/vAN-20200428_ROOT6-1/include/AliPicoV0.h:43:3: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   const Double_t RapidityLa() const;
+   ^~~~~
+In file included from /afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliPicoCascadeRD.h:4:0,
+                 from /afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliPicoCascadeRD.cxx:5,
+                 from /afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliPicoCascadeRD_cxx_ACLiC_dict.cxx:40:
+/afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliPicoCascade.h:43:3: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   const Double_t RapidityXi() const;
+   ^~~~~
+/afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliPicoCascade.h:44:3: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   const Double_t RapidityOmega() const;
+   ^~~~~
+Info in <TUnixSystem::ACLiC>: creating shared library /afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliPicoCascadeMC_cxx.so
+In file included from /cvmfs/alice.cern.ch/el6-x86_64/Packages/AliPhysics/vAN-20200428_ROOT6-1/include/AliPicoV0MC.h:6:0,
+                 from /afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliPicoCascadeMC.cxx:4,
+                 from /afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliPicoCascadeMC_cxx_ACLiC_dict.cxx:40:
+/cvmfs/alice.cern.ch/el6-x86_64/Packages/AliPhysics/vAN-20200428_ROOT6-1/include/AliPicoV0.h:42:3: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   const Double_t RapidityKa() const;
+   ^~~~~
+/cvmfs/alice.cern.ch/el6-x86_64/Packages/AliPhysics/vAN-20200428_ROOT6-1/include/AliPicoV0.h:43:3: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   const Double_t RapidityLa() const;
+   ^~~~~
+In file included from /afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliPicoCascadeMC.h:4:0,
+                 from /afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliPicoCascadeMC.cxx:5,
+                 from /afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliPicoCascadeMC_cxx_ACLiC_dict.cxx:40:
+/afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliPicoCascade.h:43:3: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   const Double_t RapidityXi() const;
+   ^~~~~
+/afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliPicoCascade.h:44:3: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   const Double_t RapidityOmega() const;
+   ^~~~~
+Info in <TUnixSystem::ACLiC>: creating shared library /afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliAnalysisTaskUserStraneJets_cxx.so
+In file included from /cvmfs/alice.cern.ch/el6-x86_64/Packages/AliRoot/v5-09-52b_ROOT6-1/include/AliAODEvent.h:19:0,
+                 from /afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliAnalysisTaskUserStraneJets.cxx:19,
+                 from /afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliAnalysisTaskUserStraneJets_cxx_ACLiC_dict.cxx:40:
+/cvmfs/alice.cern.ch/el6-x86_64/Packages/AliRoot/v5-09-52b_ROOT6-1/include/AliVEvent.h:255:17: warning: 'virtual Int_t AliVEvent::GetPrimaryVertexTracks(AliESDVertex&) const' was hidden [-Woverloaded-virtual]
+   virtual Int_t GetPrimaryVertexTracks( AliESDVertex & ) const {return 0;}
+                 ^~~~~~~~~~~~~~~~~~~~~~
+In file included from /afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliAnalysisTaskUserStraneJets.cxx:19:0,
+                 from /afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliAnalysisTaskUserStraneJets_cxx_ACLiC_dict.cxx:40:
+/cvmfs/alice.cern.ch/el6-x86_64/Packages/AliRoot/v5-09-52b_ROOT6-1/include/AliAODEvent.h:193:25: warning:   by 'virtual AliAODVertex* AliAODEvent::GetPrimaryVertexTracks() const' [-Woverloaded-virtual]
+   virtual AliAODVertex *GetPrimaryVertexTracks() const {return GetVertex(0);}
+                         ^~~~~~~~~~~~~~~~~~~~~~
+In file included from /cvmfs/alice.cern.ch/el6-x86_64/Packages/AliPhysics/vAN-20200428_ROOT6-1/include/AliPicoV0RD.h:4:0,
+                 from /afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliAnalysisTaskUserStraneJets.cxx:22,
+                 from /afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliAnalysisTaskUserStraneJets_cxx_ACLiC_dict.cxx:40:
+/cvmfs/alice.cern.ch/el6-x86_64/Packages/AliPhysics/vAN-20200428_ROOT6-1/include/AliPicoV0.h:42:3: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   const Double_t RapidityKa() const;
+   ^~~~~
+/cvmfs/alice.cern.ch/el6-x86_64/Packages/AliPhysics/vAN-20200428_ROOT6-1/include/AliPicoV0.h:43:3: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   const Double_t RapidityLa() const;
+   ^~~~~
+In file included from /afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliAnalysisTaskUserStraneJets.cxx:30:0,
+                 from /afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliAnalysisTaskUserStraneJets_cxx_ACLiC_dict.cxx:40:
+/afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliPicoCascade.h:43:3: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   const Double_t RapidityXi() const;
+   ^~~~~
+/afs/cern.ch/work/p/pcui/private/pPb/FullStatistic/ThisAna_New/JEBins/AntiLa/AliPicoCascade.h:44:3: warning: type qualifiers ignored on function return type [-Wignored-qualifiers]
+   const Double_t RapidityOmega() const;
+   ^~~~~
+W-AliAODEvent::ReadFromTree: AliAODEvent::ReadFromTree() TList contains less than the standard contents 5 < 23 That might be fine though (at least for filtered AODs)
+Analyzing inclusive AntiLa loop in MC...
+55414705
+1 = M
+2 = M
+3 = M
+4 = M
+5 = M
+6 = M
+7 = M
+8 = M
+9 = M
+10 = M
+11 = M
+12 = M
+13 = M
+14 = M
+15 = M
+16 = M
+17 = M
+18 = M
+E-TBranchElement::GetBasket: File: /eos/home-p/pcui/Results/pPb/LHC17f2b_CENT_woSDD/AliAOD.StrangeParJets_265424_017.root at byte:0, branch:fUniqueID, entry:0, badread=0, nerrors=1, basketnumber=0
+E-TBranchElement::GetBasket: File: /eos/home-p/pcui/Results/pPb/LHC17f2b_CENT_woSDD/AliAOD.StrangeParJets_265424_017.root at byte:0, branch:fUniqueID, entry:1, badread=0, nerrors=2, basketnumber=0
+E-TBranchElement::GetBasket: File: /eos/home-p/pcui/Results/pPb/LHC17f2b_CENT_woSDD/AliAOD.StrangeParJets_265424_017.root at byte:0, branch:fUniqueID, entry:2, badread=0, nerrors=3, basketnumber=0
+E-TBranchElement::GetBasket: File: /eos/home-p/pcui/Results/pPb/LHC17f2b_CENT_woSDD/AliAOD.StrangeParJets_265424_017.root at byte:0, branch:fUniqueID, entry:3, badread=0, nerrors=4, basketnumber=0
+E-TBranchElement::GetBasket: File: /eos/home-p/pcui/Results/pPb/LHC17f2b_CENT_woSDD/AliAOD.StrangeParJets_265424_017.root at byte:0, branch:fUniqueID, entry:4, badread=0, nerrors=5, basketnumber=0
+E-TBranchElement::GetBasket: File: /eos/home-p/pcui/Results/pPb/LHC17f2b_CENT_woSDD/AliAOD.StrangeParJets_265424_017.root at byte:0, branch:fUniqueID, entry:5, badread=0, nerrors=6, basketnumber=0
+E-TBranchElement::GetBasket: File: /eos/home-p/pcui/Results/pPb/LHC17f2b_CENT_woSDD/AliAOD.StrangeParJets_265424_017.root at byte:0, branch:fUniqueID, entry:6, badread=0, nerrors=7, basketnumber=0
+E-TBranchElement::GetBasket: File: /eos/home-p/pcui/Results/pPb/LHC17f2b_CENT_woSDD/AliAOD.StrangeParJets_265424_017.root at byte:0, branch:fUniqueID, entry:7, badread=0, nerrors=8, basketnumber=0
+E-TBranchElement::GetBasket: File: /eos/home-p/pcui/Results/pPb/LHC17f2b_CENT_woSDD/AliAOD.StrangeParJets_265424_017.root at byte:0, branch:fUniqueID, entry:8, badread=0, nerrors=9, basketnumber=0
+ file probably overwritten: stopping reporting error messages
+E-TBranchElement::GetBasket: File: /eos/home-p/pcui/Results/pPb/LHC17f2b_CENT_woSDD/AliAOD.StrangeParJets_265424_017.root at byte:0, branch:fUniqueID, entry:9, badread=0, nerrors=10, basketnumber=0
+W-TBasket::ReadBasketBuffers: basket: has fNevBuf=0 but fEntryOffset=0, pos=3109630, len=3415, fNbytes=0, fObjlen=0, trying to repair
+ <message repeated 2 times>
+W-TBasket::ReadBasketBuffers: basket: has fNevBuf=0 but fEntryOffset=0, pos=4123191, len=3415, fNbytes=0, fObjlen=0, trying to repair
+ <message repeated 2660 times>
+W-TBasket::ReadBasketBuffers: basket: has fNevBuf=0 but fEntryOffset=0, pos=5251843, len=3415, fNbytes=0, fObjlen=0, trying to repair
+ <message repeated 2660 times>
+W-TBasket::ReadBasketBuffers: basket: has fNevBuf=0 but fEntryOffset=0, pos=5490229, len=1929, fNbytes=0, fObjlen=0, trying to repair
+ <message repeated 650 times>
+W-TBasket::ReadBasketBuffers: basket: has fNevBuf=0 but fEntryOffset=0, pos=5540506, len=1823, fNbytes=0, fObjlen=0, trying to repair
+ <message repeated 114 times>
+W-TBasket::ReadBasketBuffers: basket: has fNevBuf=0 but fEntryOffset=0, pos=5546337, len=5280, fNbytes=0, fObjlen=0, trying to repair
+ <message repeated 5 times>
+W-TBasket::ReadBasketBuffers: basket: has fNevBuf=0 but fEntryOffset=0, pos=5646478, len=2303, fNbytes=0, fObjlen=0, trying to repair
+ <message repeated 302 times>
+W-TBasket::ReadBasketBuffers: basket: has fNevBuf=0 but fEntryOffset=0, pos=5656886, len=10308, fNbytes=0, fObjlen=0, trying to repair
+19 = M
+20 = M
+21 = M
+22 = M
+23 = M
+24 = M
+25 = M
+26 = M
+27 = M
+28 = M
+29 = M
+30 = M
+31 = M
+32 = M
+33 = M
+34 = M
+35 = M
+36 = M
+37 = M
+38 = M
+39 = M
+40 = M
+41 = M
+42 = M
+43 = M
+44 = M
+45 = M
+46 = M
+47 = M
+48 = M
+49 = M
+50 = M
+51 = M
+52 = M
+53 = M
+54 = M
+55 = M
+Bin counting the AntiLa candidates...
+Fitting AntiLa InvM in pT bin:  1
+Fitting AntiLa InvM in pT bin:  2
+Fitting AntiLa InvM in pT bin:  3
+Fitting AntiLa InvM in pT bin:  4
+Fitting AntiLa InvM in pT bin:  5
+Fitting AntiLa InvM in pT bin:  6
+Fitting AntiLa InvM in pT bin:  7
+Make efficiency... 
+Make final results...
+Make final results...
+Make final results...
+Make final results...
+Make final results...
+Make final results...
+Make final results...
+Make final results...
+Make final results...
+Make final results...
+Make final results...
+Make final results...

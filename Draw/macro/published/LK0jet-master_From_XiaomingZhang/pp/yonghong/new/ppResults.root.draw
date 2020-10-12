@@ -1,0 +1,117 @@
+#-----------------------
+#figure
+#geom 500x500
+#title: smart group
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplist_Inclusive/hKshort_Stat :p : title=hKshort_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplist_Inclusive/hKshort_Syst :p : title=hKshort_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplist_Inclusive/hLambda_Stat :p : title=hLambda_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplist_Inclusive/hLambda_Syst :p : title=hLambda_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplist_Inclusive/hAntiLa_Stat :p : title=hAntiLa_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplist_Inclusive/hAntiLa_Syst :p : title=hAntiLa_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplist_Inclusive/hRatioV_Stat :p : title=hRatioV_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplist_Inclusive/hRatioV_Syst :p : title=hRatioV_Syst
+#-----------------------
+#figure
+#geom 500x500
+#title: smart group
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_PCM_JC04_JR04_PtJ10/hKshort_Stat :p : title=hKshort_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_PCM_JC04_JR04_PtJ10/hLambda_Stat :p : title=hLambda_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_PCM_JC04_JR04_PtJ10/hLambda_Syst :p : title=hLambda_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_PCM_JC04_JR04_PtJ10/hAntiLa_Stat :p : title=hAntiLa_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_PCM_JC04_JR04_PtJ10/hAntiLa_Syst :p : title=hAntiLa_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_PCM_JC04_JR04_PtJ10/hRatioV_Stat :p : title=hRatioV_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_OC06_JC04_JR04_PtJ10/hKshort_Stat :p : title=hKshort_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_OC06_JC04_JR04_PtJ10/hLambda_Stat :p : title=hLambda_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_OC06_JC04_JR04_PtJ10/hLambda_Syst :p : title=hLambda_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_OC06_JC04_JR04_PtJ10/hAntiLa_Stat :p : title=hAntiLa_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_OC06_JC04_JR04_PtJ10/hAntiLa_Syst :p : title=hAntiLa_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_OC06_JC04_JR04_PtJ10/hRatioV_Stat :p : title=hRatioV_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_OC04_JC04_JR04_PtJ10/hKshort_Stat :p : title=hKshort_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_OC04_JC04_JR04_PtJ10/hLambda_Stat :p : title=hLambda_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_OC04_JC04_JR04_PtJ10/hLambda_Syst :p : title=hLambda_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_OC04_JC04_JR04_PtJ10/hAntiLa_Stat :p : title=hAntiLa_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_OC04_JC04_JR04_PtJ10/hAntiLa_Syst :p : title=hAntiLa_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_OC04_JC04_JR04_PtJ10/hRatioV_Stat :p : title=hRatioV_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_NJ_JC04_JR04_PtJ10/hKshort_Stat :p : title=hKshort_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_NJ_JC04_JR04_PtJ10/hLambda_Stat :p : title=hLambda_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_NJ_JC04_JR04_PtJ10/hLambda_Syst :p : title=hLambda_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_NJ_JC04_JR04_PtJ10/hAntiLa_Stat :p : title=hAntiLa_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_NJ_JC04_JR04_PtJ10/hAntiLa_Syst :p : title=hAntiLa_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_NJ_JC04_JR04_PtJ10/hRatioV_Stat :p : title=hRatioV_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC02_JR04_PtJ10/hKshort_Stat :p : title=hKshort_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC02_JR04_PtJ10/hLambda_Stat :p : title=hLambda_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC02_JR04_PtJ10/hLambda_Syst :p : title=hLambda_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC02_JR04_PtJ10/hAntiLa_Stat :p : title=hAntiLa_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC02_JR04_PtJ10/hAntiLa_Syst :p : title=hAntiLa_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC02_JR04_PtJ10/hRatioV_Stat :p : title=hRatioV_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC04_JR04_PtJ10/hKshort_Stat :p : title=hKshort_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC04_JR04_PtJ10/hLambda_Stat :p : title=hLambda_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC04_JR04_PtJ10/hLambda_Syst :p : title=hLambda_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC04_JR04_PtJ10/hAntiLa_Stat :p : title=hAntiLa_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC04_JR04_PtJ10/hAntiLa_Syst :p : title=hAntiLa_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC04_JR04_PtJ10/hRatioV_Stat :p : title=hRatioV_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC02_JR04_PtJ10/hKshort_Stat :p : title=hKshort_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC02_JR04_PtJ10/hLambda_Stat :p : title=hLambda_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC02_JR04_PtJ10/hLambda_Syst :p : title=hLambda_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC02_JR04_PtJ10/hAntiLa_Stat :p : title=hAntiLa_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC02_JR04_PtJ10/hAntiLa_Syst :p : title=hAntiLa_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC02_JR04_PtJ10/hRatioV_Stat :p : title=hRatioV_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC04_JR04_PtJ10/hKshort_Stat :p : title=hKshort_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC04_JR04_PtJ10/hLambda_Stat :p : title=hLambda_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC04_JR04_PtJ10/hLambda_Syst :p : title=hLambda_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC04_JR04_PtJ10/hAntiLa_Stat :p : title=hAntiLa_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC04_JR04_PtJ10/hAntiLa_Syst :p : title=hAntiLa_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC04_JR04_PtJ10/hRatioV_Stat :p : title=hRatioV_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC02_JR02_PtJ10/hKshort_Stat :p : title=hKshort_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC02_JR02_PtJ10/hLambda_Stat :p : title=hLambda_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC02_JR02_PtJ10/hLambda_Syst :p : title=hLambda_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC02_JR02_PtJ10/hAntiLa_Stat :p : title=hAntiLa_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC02_JR02_PtJ10/hAntiLa_Syst :p : title=hAntiLa_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC02_JR02_PtJ10/hRatioV_Stat :p : title=hRatioV_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC04_JR02_PtJ10/hKshort_Stat :p : title=hKshort_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC04_JR02_PtJ10/hLambda_Stat :p : title=hLambda_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC04_JR02_PtJ10/hLambda_Syst :p : title=hLambda_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC04_JR02_PtJ10/hAntiLa_Stat :p : title=hAntiLa_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC04_JR02_PtJ10/hAntiLa_Syst :p : title=hAntiLa_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC04_JR02_PtJ10/hRatioV_Stat :p : title=hRatioV_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC02_JR02_PtJ10/hKshort_Stat :p : title=hKshort_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC02_JR02_PtJ10/hLambda_Stat :p : title=hLambda_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC02_JR02_PtJ10/hLambda_Syst :p : title=hLambda_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC02_JR02_PtJ10/hAntiLa_Stat :p : title=hAntiLa_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC02_JR02_PtJ10/hAntiLa_Syst :p : title=hAntiLa_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC02_JR02_PtJ10/hRatioV_Stat :p : title=hRatioV_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC04_JR02_PtJ10/hKshort_Stat :p : title=hKshort_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC04_JR02_PtJ10/hLambda_Stat :p : title=hLambda_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC04_JR02_PtJ10/hLambda_Syst :p : title=hLambda_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC04_JR02_PtJ10/hAntiLa_Stat :p : title=hAntiLa_Stat
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC04_JR02_PtJ10/hAntiLa_Syst :p : title=hAntiLa_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC04_JR02_PtJ10/hRatioV_Stat :p : title=hRatioV_Stat
+#-----------------------
+#figure
+#geom 500x500
+#title: smart group
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_PCM_JC04_JR04_PtJ10/hKshort_Syst :p : title=hKshort_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_PCM_JC04_JR04_PtJ10/hRatioV_Syst :p : title=hRatioV_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_OC06_JC04_JR04_PtJ10/hKshort_Syst :p : title=hKshort_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_OC06_JC04_JR04_PtJ10/hRatioV_Syst :p : title=hRatioV_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_OC04_JC04_JR04_PtJ10/hKshort_Syst :p : title=hKshort_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_OC04_JC04_JR04_PtJ10/hRatioV_Syst :p : title=hRatioV_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_NJ_JC04_JR04_PtJ10/hKshort_Syst :p : title=hKshort_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistUE_NJ_JC04_JR04_PtJ10/hRatioV_Syst :p : title=hRatioV_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC02_JR04_PtJ10/hKshort_Syst :p : title=hKshort_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC02_JR04_PtJ10/hRatioV_Syst :p : title=hRatioV_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC04_JR04_PtJ10/hKshort_Syst :p : title=hKshort_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC04_JR04_PtJ10/hRatioV_Syst :p : title=hRatioV_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC02_JR04_PtJ10/hKshort_Syst :p : title=hKshort_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC02_JR04_PtJ10/hRatioV_Syst :p : title=hRatioV_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC04_JR04_PtJ10/hKshort_Syst :p : title=hKshort_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC04_JR04_PtJ10/hRatioV_Syst :p : title=hRatioV_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC02_JR02_PtJ10/hKshort_Syst :p : title=hKshort_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC02_JR02_PtJ10/hRatioV_Syst :p : title=hRatioV_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC04_JR02_PtJ10/hKshort_Syst :p : title=hKshort_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistJE_JC04_JR02_PtJ10/hRatioV_Syst :p : title=hRatioV_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC02_JR02_PtJ10/hKshort_Syst :p : title=hKshort_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC02_JR02_PtJ10/hRatioV_Syst :p : title=hRatioV_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC04_JR02_PtJ10/hKshort_Syst :p : title=hKshort_Syst
+/Users/ploskon/devel/LK0jet/pp/yonghong/new/ppResults.root 		:pplistHD_JC04_JR02_PtJ10/hRatioV_Syst :p : title=hRatioV_Syst
+

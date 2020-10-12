@@ -1,0 +1,7 @@
+#figure
+#title: ./pPb/s2f_cRatioV_VJ_PtJE_V0A_000_010_PtV0_2d2_3d7.root.draw
+/Users/ploskon/devel/LK0jet/utils/pPb/s2f_cRatioV_VJ_PtJE_V0A_000_010_PtV0_2d2_3d7.root 		:hframe :hist : title=
+/Users/ploskon/devel/LK0jet/utils/pPb/s2f_cRatioV_VJ_PtJE_V0A_000_010_PtV0_2d2_3d7.root 		:grErr_hL2Ksyst20 :hist : title=grErr_
+/Users/ploskon/devel/LK0jet/utils/pPb/s2f_cRatioV_VJ_PtJE_V0A_000_010_PtV0_2d2_3d7.root 		:grErr_hL2Kstat20 :hist : title=grErr_
+/Users/ploskon/devel/LK0jet/utils/pPb/s2f_cRatioV_VJ_PtJE_V0A_000_010_PtV0_2d2_3d7.root 		:grErr_hL2Ksyst10 :hist : title=grErr_
+/Users/ploskon/devel/LK0jet/utils/pPb/s2f_cRatioV_VJ_PtJE_V0A_000_010_PtV0_2d2_3d7.root 		:hL2Kstat10 :hist : title=

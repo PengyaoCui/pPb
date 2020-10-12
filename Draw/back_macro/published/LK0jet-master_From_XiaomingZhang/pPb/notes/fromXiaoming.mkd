@@ -1,0 +1,38 @@
+2nd of September 2016
+---------------------
+
+all final files are now in git.
+
+In the repository of LK0jet, the root files for the final results are at:
+  [LK0jet/iterations/Update20160725/plot/data](https://gitlab.cern.ch/LK0jet/LK0jet/tree/master/iterations/Update20160725/plot/data)
+
+The file of `LK0jet/iterations/Update20160725/plot/data/AnalysisResults.root`
+is the one includes final results with stat. and syst. errors. Other files contain the middle step outputs. An illustration of them is in [LK0jet/iterations/Update20160725/plot/data/data.mkd](https://gitlab.cern.ch/LK0jet/LK0jet/blob/master/iterations/Update20160725/plot/data/data.mkd) (you may need a git pull)
+
+A doc about all recent update are at: [LK0jet/iterations/PC20160712](https://gitlab.cern.ch/LK0jet/LK0jet/raw/master/iterations/PC20160712/AliV0JetsPC20160712.pdf)
+
+28th of March 2016
+---------------------
+
+- DCA cut on V0 daughters to PV: > 0.06 cm
+- V0 2D decay radius: > 0.5 cm
+- DCA cut on jet track selection: < 2.4 cm
+- Shared track fraction between V0 daughters and jet tracks: ~0.1%
+
+- Jet efficiency: results from Rudiger’s thesis
+  - kinematic efficiency:
+    - ~0.65 at pTjet = 10 GeV/c
+    - ~0.9 at pTjet = 20 GeV/c
+  - reconstruction efficiency: > 0.95 in pTjet > 10 GeV/c
+
+- We used the fixed pointing angle cut not depend on pT
+
+- V0 inv M fit, there is the performance from LF (https://aliceinfo.cern.ch/Figure/node/5910)
+
+- Feeddown fraction: the feed-down fraction is 20% at intermedia-pT (1-4 GeV/c) then decrease with pT (down to 5% at pT = 10 GeV/c)
+- uncertainty on feed-down correction for V0 in jets is 5% see fig 49 in the analysis note: https://aliceinfo.cern.ch/Notes/sites/aliceinfo.cern.ch.Notes/files/notes/analysis/xzhang/2014-May-02-analysis_note-AliAnaNoteCorrV0Jets.pdf
+
+- Plots in the paper:
+  - https://www.dropbox.com/sh/1ejp5yck1rbv500/AADB_aNBqSezwavrUlLtoBA4a?dl=0
+  - see the log file for the details: https://www.dropbox.com/s/4np040sqpux0hyd/ana.log?dl=0
+==========

@@ -1,0 +1,59 @@
+# Xiaoming's comments based on version on Nov/9/2016
+
+
+## p-Pb solo
+
+General:
+- As commented by Vit, we need to unify the notations for different type of radii in the text and figs
+- Notation of PYTHIA: PYTHIA or \textsc{Pythia}?
+
+> yes, to be done later.
+
+l14: For small R (R<1.0)...
+- I think it is related to fig 5 left (Am I right?)
+- But we can not extract the info mentioned here directly from that fig
+- Also, in jet analysis, R achieve to 1.0 (do we need the all decimal digits?) is not **small**
+
+> abstract changed; now discussion focussed on corrected and uncorrected ratio; R>0.2 or R<0.2
+
+l16: ...for large R...
+- It is better give a range
+
+> abstract changed; now discussion focussed on corrected and uncorrected ratio; R>0.2 or R<0.2
+
+l49: ...the final state nuclear effects such as shadowing and gluon saturation, or multiple scattering...
+- As fart as I known, the shadowing and CGC are initial state effects and multiple scattering can present in both initial and final states
+
+> Fixed.
+
+l59: ...particle momentum...
+- "particle transverse momentum" or "pT" for simple
+
+> Fixed.
+
+l83, l105 and l145:
+- We did **NOT** use TOF for PID in this analysis (also in pp analysis), should we mention it in detail in the paper?
+
+> l83 left in as a general statement
+> l105++ removed.
+> l145++ - reference to TOF removed
+
+l134: ...and/or pileup (particles not associated to the hard scattering)...
+- Underlying is not associated to the hard scattering, but pileup can from hard scattering but which does not correlated with the tagged one
+
+> left as is for the moment
+
+l199: In this analysis we consider the jet area A^jet = pi R^2...
+- Indeed, we do not do that, and this sentence would make a misunderstanding. The matched region is defined as a circle and it is naturally calculated as pi\*R\_match^2
+
+> sentence removed
+
+l218: ...high-pT performed in pp collisions...
+- To estimate the FD, the input Xi is measured in p-Pb **NOT** pp, then it is extrapolated to lower pT using the PYTHIA
+
+> changed to pPb and reference corrected
+
+
+## pp and p-Pb combined version
+
+We could, firstly, define which results would be shown in the combined paper (pp and p-Pb alone + pp and p-Pb comparison) then go to update the text.

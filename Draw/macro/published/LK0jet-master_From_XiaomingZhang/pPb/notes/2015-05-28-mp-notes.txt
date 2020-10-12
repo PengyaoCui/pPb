@@ -1,0 +1,15 @@
+1. Results presentation to be finished
+- final high-resolution figures of the spectra
+- add the ratio of central/min bias (?)
+- the mean pT needs a discussion
+- decide: what in the main body and what into an appendix
+
+2. Conclusions (should be easy)
+
+3. Details on systematic uncertainties
+- additional figure with relative contributions separated (in function of pT and for different centrality classes)
+
+4. Additional considerations
+- Shorten the introduction ?
+- More details on the L,K reconstruction? Jet reconstruction?
+

@@ -1,0 +1,9 @@
+#figure
+#title: ./pPb/s2f_cRatioV_VJ_Comp_V0A_000_100_PtJ10_PtV0_2d2_3d7.root.draw
+/Users/ploskon/devel/LK0jet/utils/pPb/s2f_cRatioV_VJ_Comp_V0A_000_100_PtJ10_PtV0_2d2_3d7.root 		:hframe :hist : title=
+/Users/ploskon/devel/LK0jet/utils/pPb/s2f_cRatioV_VJ_Comp_V0A_000_100_PtJ10_PtV0_2d2_3d7.root 		:grErr_hRatioV_JR02_Syst :hist : title=grErr_
+/Users/ploskon/devel/LK0jet/utils/pPb/s2f_cRatioV_VJ_Comp_V0A_000_100_PtJ10_PtV0_2d2_3d7.root 		:grErr_hRatioV_JR02_Stat :hist : title=grErr_
+/Users/ploskon/devel/LK0jet/utils/pPb/s2f_cRatioV_VJ_Comp_V0A_000_100_PtJ10_PtV0_2d2_3d7.root 		:grErr_hRatioV_JR04_Syst :hist : title=grErr_
+/Users/ploskon/devel/LK0jet/utils/pPb/s2f_cRatioV_VJ_Comp_V0A_000_100_PtJ10_PtV0_2d2_3d7.root 		:grErr_hRatioV_JR04_Stat :hist : title=grErr_
+/Users/ploskon/devel/LK0jet/utils/pPb/s2f_cRatioV_VJ_Comp_V0A_000_100_PtJ10_PtV0_2d2_3d7.root 		:grErr_hRatioV_JR03_Syst :hist : title=grErr_
+/Users/ploskon/devel/LK0jet/utils/pPb/s2f_cRatioV_VJ_Comp_V0A_000_100_PtJ10_PtV0_2d2_3d7.root 		:hRatioV_JR03_Stat :hist : title=

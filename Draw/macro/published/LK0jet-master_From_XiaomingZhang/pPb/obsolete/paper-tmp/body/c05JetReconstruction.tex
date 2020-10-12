@@ -1,0 +1,27 @@
+%!TEX root = ../AliPubV0JetspPb.tex
+
+\section{Jet reconstruction}
+
+The jet reconstruction follows the analysis presented in \cite{Adam:2015hoa,Abelev:2013kqa}. 
+Charged particles are reconstructed as tracks in the ITS and the TPC which cover the full azimuth and $|\eta_\mathrm{lab}| < 0.9$. 
+For tracks with reconstructed track points close to the vertex (measured by the SPD), a momentum resolution of  0.8\% (3.8\%) for $\pt = 1$~GeV/$c$ (50 GeV/$c$) is reached \cite{Abelev:2014ffa}. 
+
+The azimuthal distribution of these high quality tracks is not fully uniform due to inefficient regions in the SPD.
+This is compensated by tracks \textit{without} reconstructed track points in the SPD. 
+For those tracks, the primary vertex is used as an additional constraint in the track fitting to improve the momentum resolution. 
+This approach yields a very uniform tracking efficiency within the acceptance, which is needed to avoid geometrical biases of the jet reconstruction algorithm caused by a non-uniform density of reconstructed  tracks.
+For the analyzed data, the additional tracks (without SPD track points) constitute approximately 4.3\% of the used track sample. 
+Tracks with $\pt > 0.15 \mathrm{~GeV}/c$ and within a pseudorapidity interval $|\eta_\mathrm{lab}|<0.9$ were used as input to the jet reconstruction.
+The overall efficiency for charged particle detection, including the effect of tracking efficiency as well as the geometrical acceptance, is 70\% at $\pt = 0.15 \mbox{~GeV}/c$ and increases to 85\% at $\pt = 1 \mbox{~GeV}/c$ and above. 
+\ask{Add the DCA cut to vertex.}.
+
+For the present analysis, the anti-$k_\mathrm{T}$ algorithm from the FastJet package \cite{Cacciari:2008gp} has been used to reconstruct jets from measured tracks with resolution parameters of $R=0.2$ and $R=0.4$.
+Jets considered in the analysis were fully contained within the charged particle track acceptance with their jet-axis at least one resolution parameter $R$ from the acceptance edge $\hlab - R$ where \hlab\ = 0.9.
+The jet transverse momentum is calculated by FastJet using the \pt\ recombination scheme. 
+The jet area \Ajet\ is determined with the so-called \emph{active area} algorithm \cite{Cacciari:2008gn} with \emph{ghost particles} of 0.005 area (rad). 
+
+In general the transverse momentum density $\rho$ of the background originating from the underlying event and/or pile-up (particles not associated to the hard scattering) contrubutes to the jet energy reported by the jet finder. The correction of the jet energy scale accounting for the background energy can be estimated on event-by-event basis using the median of all jet candidate clusters $\ptch$ reconstructed with the $\kt$ algorithm per unit area. This method has been used in the analysis of \PbPb\ events \cite{Abelev:2013kqa,Adam:2015ewa}.
+
+In $\pPb$ collisions, however, the multiplicity density is two orders of magnitude smaller than in central $\PbPb$ collisions \cite{ALICE:2012xs} and a corresponding reduction of the jet background is expected. In this analysis, an improved estimate for the more sparse environment of $\pPb$ events a variation \cite{Adam:2015hoa} of the approach described in \cite{Chatrchyan:2012tt} was employed. Consequently, the hard scatterings are tagged with anti-\kt\ jets with $\ptjet > 10 \gevc$ and $20 \gevc$ that is corrected on an event-by-event basis for the event background $\rho \Ajet$, such that $\ptjet = \pt^{{\rm raw~anti-\kt}} - \rho \Ajet$.
+
+\ask{We need to comment on: a) the jet efficiency for $\pt < 20~\gevc$. Not in the cited paper. Below some text from the jet in \pPb\ paper.}
