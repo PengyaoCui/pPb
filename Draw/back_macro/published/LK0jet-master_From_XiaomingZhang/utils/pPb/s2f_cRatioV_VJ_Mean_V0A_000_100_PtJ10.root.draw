@@ -1,9 +1,0 @@
-#figure
-#title: ./pPb/s2f_cRatioV_VJ_Mean_V0A_000_100_PtJ10.root.draw
-/Users/ploskon/devel/LK0jet/utils/pPb/s2f_cRatioV_VJ_Mean_V0A_000_100_PtJ10.root 		:hframe :hist : title=
-/Users/ploskon/devel/LK0jet/utils/pPb/s2f_cRatioV_VJ_Mean_V0A_000_100_PtJ10.root 		:grErr_hL2KsystR :hist : title=grErr_
-/Users/ploskon/devel/LK0jet/utils/pPb/s2f_cRatioV_VJ_Mean_V0A_000_100_PtJ10.root 		:grErr_hL2KstatR :hist : title=grErr_
-/Users/ploskon/devel/LK0jet/utils/pPb/s2f_cRatioV_VJ_Mean_V0A_000_100_PtJ10.root 		:grErr_hL2KsystL :hist : title=grErr_
-/Users/ploskon/devel/LK0jet/utils/pPb/s2f_cRatioV_VJ_Mean_V0A_000_100_PtJ10.root 		:grErr_hL2KstatL :hist : title=grErr_
-/Users/ploskon/devel/LK0jet/utils/pPb/s2f_cRatioV_VJ_Mean_V0A_000_100_PtJ10.root 		:grErr_hL2KsystM :hist : title=grErr_
-/Users/ploskon/devel/LK0jet/utils/pPb/s2f_cRatioV_VJ_Mean_V0A_000_100_PtJ10.root 		:hL2KstatM :hist : title=
