@@ -222,7 +222,7 @@ void runLocalStrangeJets()
             ana->AnaResults(2*0.75*TMath::TwoPi()*0.06);
           }else{
             if(IsPCLU) ana->AnaResults(2*0.75*TMath::TwoPi()*0.12);
-            if(IsOC) ana->AnaResults(2*0.75*TMath::TwoPi()*0.76);
+            if(IsOC) ana->AnaResults(2*0.75*TMath::TwoPi()*0.79);
             if(IsNJ) ana->AnaResults(2*0.75*TMath::TwoPi());
           }
         }
@@ -279,7 +279,7 @@ void runLocalStrangeJets()
         ana->SetDataMakeFdR(sFileMakeLaFdR, Form("%s_%s_%s_%s",slistMakeLaFdR.Data(),sType1.Data(),sFix.Data(), Cent.Data()));
         if(PCL){ana->AnaMakeFdR(hPtXiPCL, hPtXiNegKine, 2*0.75*TMath::TwoPi()*0.12); }
         if(PCU){ana->AnaMakeFdR(hPtXiPCU, hPtXiNegKine, 2*0.75*TMath::TwoPi()*0.12); }
-        if(IsOC){ana->AnaMakeFdR(hPtXiOC, hPtXiNegKine, 2*0.75*TMath::TwoPi()*0.76); }
+        if(IsOC){ana->AnaMakeFdR(hPtXiOC, hPtXiNegKine, 2*0.75*TMath::TwoPi()*0.79); }
         if(IsNJ){ana->AnaMakeFdR(hPtXiNJ, hPtXiNegKine, 2*0.75*TMath::TwoPi()); }
         if(!IsUE){ana->AnaMakeFdRJC(hPtXiJE, hPtXiNegKine, hPtLaJE, 2*0.75*TMath::TwoPi()*0.06);}
       }
@@ -317,7 +317,7 @@ void runLocalStrangeJets()
         ana->SetDataMakeFdR(sFileMakeLaFdR, Form("%s_%s_%s_%s",slistMakeLaFdR.Data(),sType1.Data(),sFix.Data(), Cent.Data()));
         if(PCL){ana->AnaMakeFdR(hPtXiPCL, hPtXiNegKine, 2*0.75*TMath::TwoPi()*0.12); }
         if(PCU){ana->AnaMakeFdR(hPtXiPCU, hPtXiNegKine, 2*0.75*TMath::TwoPi()*0.12); }
-        if(IsOC){ana->AnaMakeFdR(hPtXiOC, hPtXiNegKine, 2*0.75*TMath::TwoPi()*0.76); }
+        if(IsOC){ana->AnaMakeFdR(hPtXiOC, hPtXiNegKine, 2*0.75*TMath::TwoPi()*0.79); }
         if(IsNJ){ana->AnaMakeFdR(hPtXiNJ, hPtXiNegKine, 2*0.75*TMath::TwoPi()); }
         if(!IsUE){ana->AnaMakeFdRJC(hPtXiJE, hPtXiNegKine, hPtLaJE, 2*0.75*TMath::TwoPi()*0.06);}
       }

@@ -73,14 +73,13 @@ void CentVal(){
     h = GetOC04RatioOK(sCent[i]);   listOC04->Add(h);
     h = GetOC04RatioOL(sCent[i]);   listOC04->Add(h);
     h = GetOC04RatioOX(sCent[i]);   listOC04->Add(h);
-
+   
     h = GetNJRatioLK(sCent[i]);   listNJ->Add(h);
     h = GetNJRatioXK(sCent[i]);   listNJ->Add(h);
     h = GetNJRatioXL(sCent[i]);   listNJ->Add(h);
     h = GetNJRatioOK(sCent[i]);   listNJ->Add(h);
     h = GetNJRatioOL(sCent[i]);   listNJ->Add(h);
     h = GetNJRatioOX(sCent[i]);   listNJ->Add(h);
-
   }
  
  

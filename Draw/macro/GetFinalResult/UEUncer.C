@@ -3,8 +3,6 @@
 void UEUncer(const TString sType = "Xi", const TString CentMin = "0", const TString CentMax = "100"){
   
   TString sPath = Form("/home/cuipengyao/study/pPb/Local/ThisAna/JE/%s", sType.Data()); 
-  TString sPathOC08 = Form("/home/cuipengyao/study/pPb/Local/ThisAna/Uncertainty/JE/UE/OC08"); 
-  if(sType == "Omega")sPathOC08 = "/home/cuipengyao/study/pPb/Local/ThisAna/Uncertainty/JE_Omega/UE/OC08"; 
   if(sType == "Omega") sPath = Form("/home/cuipengyao/study/pPb/Local/ThisAna/JE_OmegaBins/%s", sType.Data()); 
   TString sFile = "AnalysisOutputs_Results.root";
   TString sList = "listResults";
@@ -48,7 +46,7 @@ void UEUncer(const TString sType = "Xi", const TString CentMin = "0", const TStr
   hUE0->Add(hUE00);
   hUE0->Scale(0.5);
   NormHistBinWidth(hUE0); 
-  hUE1 = (TH1D*)GetTH1D(sPathOC08, sFile, OCList, sHist);
+  hUE1 = (TH1D*)GetTH1D(sPath, sFile, OCList, sHist);
   NormHistBinWidth(hUE1); 
   hUE2 = (TH1D*)GetTH1D(sPath, sFile, NJList, sHist);
   NormHistBinWidth(hUE2); 
