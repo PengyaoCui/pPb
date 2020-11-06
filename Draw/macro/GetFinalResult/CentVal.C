@@ -4,14 +4,18 @@
 void CentVal(){
 
   TString Path = "/home/cuipengyao/study/pPb/Local/ThisAna/JE_OmegaBins";
+  TString sPC2 = "/home/cuipengyao/study/pPb/Local/ThisAna/Uncertainty/JE/UE/PC02";
+  TString sPC6 = "/home/cuipengyao/study/pPb/Local/ThisAna/Uncertainty/JE/UE/PC06";
+  TString OPC2 = "/home/cuipengyao/study/pPb/Local/ThisAna/Uncertainty/JE_Omega/UE/PC02";
+  TString OPC6 = "/home/cuipengyao/study/pPb/Local/ThisAna/Uncertainty/JE_Omega/UE/PC06";
   TFile *file = TFile::Open("./result/CentVal.root", "UPDATE");
   TList *listIn = (TList*)file->Get(Form("listIn"));             if (!listIn){listIn = new TList();}
 
   TList *listJC = (TList*)file->Get(Form("listJC"));     if (!listJC){listJC = new TList();}
-  TList *listPC = (TList*)file->Get(Form("listPC"));     if (!listPC){listPC = new TList();}
   TList *listJE = (TList*)file->Get(Form("listJE"));     if (!listJE){listJE = new TList();}
-  TList *listOC04 = (TList*)file->Get(Form("listOC04")); if (!listOC04){listOC04 = new TList();}
-  TList *listNJ = (TList*)file->Get(Form("listNJ"));     if (!listNJ){listNJ = new TList();}
+  TList *listPC02 = (TList*)file->Get(Form("listPC02")); if (!listPC02){listPC02 = new TList();}
+  TList *listPC04 = (TList*)file->Get(Form("listPC04")); if (!listPC04){listPC04 = new TList();}
+  TList *listPC06 = (TList*)file->Get(Form("listPC06")); if (!listPC06){listPC06 = new TList();}
   
   TH1D* h = nullptr;
   TString sType[] = {"Kshort", "Lambda", "AntiLa", "Xi", "Omega"};
@@ -22,18 +26,18 @@ void CentVal(){
   }
   for(Int_t i = 0; i< sizeof(sType)/sizeof(TString)-1; i++)for(Int_t j = 0; j< sizeof(sCent)/sizeof(TString); j++){
     h = GetJCPtSpect(sType[i], sCent[j]); listJC->Add(h); 
-    h = GetPCPtSpect(sType[i], sCent[j]); listPC->Add(h); 
     h = GetJEPtSpect(sType[i], sCent[j]); listJE->Add(h); 
-    h = GetOC04PtSpect(sType[i], sCent[j]); listOC04->Add(h); 
-    h = GetNJPtSpect(sType[i], sCent[j]); listNJ->Add(h); 
+    h = GetPCPtSpect(sType[i], sCent[j], sPC2); listPC02->Add(h); 
+    h = GetPCPtSpect(sType[i], sCent[j]); listPC04->Add(h); 
+    h = GetPCPtSpect(sType[i], sCent[j], sPC6); listPC06->Add(h); 
   }
 
   for(Int_t j = 0; j< sizeof(sCent)/sizeof(TString); j++){
     h = GetJCPtSpect(sType[4], sCent[j], Path);   listJC->Add(h); 
-    h = GetPCPtSpect(sType[4], sCent[j], Path);   listPC->Add(h); 
     h = GetJEPtSpect(sType[4], sCent[j], Path);   listJE->Add(h); 
-    h = GetOC04PtSpect(sType[4], sCent[j], Path); listOC04->Add(h); 
-    h = GetNJPtSpect(sType[4], sCent[j], Path);   listNJ->Add(h); 
+    h = GetPCPtSpect(sType[4], sCent[j], OPC2);   listPC02->Add(h); 
+    h = GetPCPtSpect(sType[4], sCent[j], Path);   listPC04->Add(h); 
+    h = GetPCPtSpect(sType[4], sCent[j], OPC6);   listPC06->Add(h); 
   
   }
   
@@ -53,13 +57,6 @@ void CentVal(){
     h = GetJCRatioOL(sCent[i]);   listJC->Add(h); 
     h = GetJCRatioOX(sCent[i]);   listJC->Add(h); 
     
-    h = GetPCRatioLK(sCent[i]);   listPC->Add(h); 
-    h = GetPCRatioXK(sCent[i]);   listPC->Add(h); 
-    h = GetPCRatioXL(sCent[i]);   listPC->Add(h); 
-    h = GetPCRatioOK(sCent[i]);   listPC->Add(h); 
-    h = GetPCRatioOL(sCent[i]);   listPC->Add(h); 
-    h = GetPCRatioOX(sCent[i]);   listPC->Add(h); 
-    
     h = GetJERatioLK(sCent[i]);   listJE->Add(h);
     h = GetJERatioXK(sCent[i]);   listJE->Add(h);
     h = GetJERatioXL(sCent[i]);   listJE->Add(h);
@@ -67,19 +64,27 @@ void CentVal(){
     h = GetJERatioOL(sCent[i]);   listJE->Add(h);
     h = GetJERatioOX(sCent[i]);   listJE->Add(h);
 
-    h = GetOC04RatioLK(sCent[i]);   listOC04->Add(h);
-    h = GetOC04RatioXK(sCent[i]);   listOC04->Add(h);
-    h = GetOC04RatioXL(sCent[i]);   listOC04->Add(h);
-    h = GetOC04RatioOK(sCent[i]);   listOC04->Add(h);
-    h = GetOC04RatioOL(sCent[i]);   listOC04->Add(h);
-    h = GetOC04RatioOX(sCent[i]);   listOC04->Add(h);
+    h = GetPCRatioLK(sCent[i], sPC2);   listPC02->Add(h);
+    h = GetPCRatioXK(sCent[i], sPC2);   listPC02->Add(h);
+    h = GetPCRatioXL(sCent[i], sPC2);   listPC02->Add(h);
+    h = GetPCRatioOK(sCent[i], OPC2);   listPC02->Add(h);
+    h = GetPCRatioOL(sCent[i], OPC2);   listPC02->Add(h);
+    h = GetPCRatioOX(sCent[i], OPC2);   listPC02->Add(h);
+    
+    h = GetPCRatioLK(sCent[i]);   listPC04->Add(h); 
+    h = GetPCRatioXK(sCent[i]);   listPC04->Add(h); 
+    h = GetPCRatioXL(sCent[i]);   listPC04->Add(h); 
+    h = GetPCRatioOK(sCent[i]);   listPC04->Add(h); 
+    h = GetPCRatioOL(sCent[i]);   listPC04->Add(h); 
+    h = GetPCRatioOX(sCent[i]);   listPC04->Add(h); 
+    
+    h = GetPCRatioLK(sCent[i], sPC6);   listPC06->Add(h);
+    h = GetPCRatioXK(sCent[i], sPC6);   listPC06->Add(h);
+    h = GetPCRatioXL(sCent[i], sPC6);   listPC06->Add(h);
+    h = GetPCRatioOK(sCent[i], OPC6);   listPC06->Add(h);
+    h = GetPCRatioOL(sCent[i], OPC6);   listPC06->Add(h);
+    h = GetPCRatioOX(sCent[i], OPC6);   listPC06->Add(h);
    
-    h = GetNJRatioLK(sCent[i]);   listNJ->Add(h);
-    h = GetNJRatioXK(sCent[i]);   listNJ->Add(h);
-    h = GetNJRatioXL(sCent[i]);   listNJ->Add(h);
-    h = GetNJRatioOK(sCent[i]);   listNJ->Add(h);
-    h = GetNJRatioOL(sCent[i]);   listNJ->Add(h);
-    h = GetNJRatioOX(sCent[i]);   listNJ->Add(h);
   }
  
  
@@ -88,10 +93,10 @@ void CentVal(){
   listIn->Write(Form("listIn"), TObject::kSingleKey );
   
   listJC->Write(Form("listJC"), TObject::kSingleKey );
-  listPC->Write(Form("listPC"), TObject::kSingleKey );
   listJE->Write(Form("listJE"), TObject::kSingleKey );
-  listOC04->Write(Form("listOC04"), TObject::kSingleKey );
-  listNJ->Write(Form("listNJ"), TObject::kSingleKey );
+  listPC02->Write(Form("listPC02"), TObject::kSingleKey );
+  listPC04->Write(Form("listPC04"), TObject::kSingleKey );
+  listPC06->Write(Form("listPC06"), TObject::kSingleKey );
   
   file->Close();
 

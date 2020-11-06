@@ -19,7 +19,7 @@ void TotUncer(const TString sType = "Lambda", const TString CentMin = "0", const
   auto sEJetFile = "JetPtUncer.root";
   auto sEJetList = Form("%s_JetPt_%s%s", sType.Data(), CentMin.Data(), CentMax.Data());
   
-  auto sCPCList = "listPC"; 
+  auto sCPCList = "listPC04"; 
   auto sCUEHist = Form("h%s_%s%s", sType.Data(), CentMin.Data(), CentMax.Data());
   auto sEUEFile = "UEUncer.root";
   auto sEUEList = Form("%s_UESub_%s%s", sType.Data(), CentMin.Data(), CentMax.Data());
