@@ -230,7 +230,23 @@ hJPtMax->Scale(1./TMath::Sqrt(12.));
   //DrawAliLogo(0.65, 0.90, 24, kTRUE);
   CanvasEnd(can);
 
-
+  ofstream OutFile;
+  OutFile.open(Form("./dat/OKRatioUncer_%s%s.dat", CentMin.Data(), CentMax.Data()));
+  OutFile<<left<<setw(15)<<"OKRatio"<<"Centrality:"<<CentMin<<"-"<<CentMax<<endl;
+  OutFile<<left<<setw(15)<<"pT(GeV/c)";
+  OutFile<<left<<setw(15)<<"ParRec";
+  OutFile<<left<<setw(15)<<"JetPt";
+  OutFile<<left<<setw(15)<<"UESub";
+  OutFile<<left<<setw(15)<<"Total";
+  OutFile<<endl;
+  for(Int_t i=1; i <= heJEI->GetNbinsX(); i++){
+    OutFile<<left<<setw(15)<<heJEI->GetBinCenter(i);
+    OutFile<<left<<setw(15)<<heJEI->GetBinContent(i)*100.;
+    OutFile<<left<<setw(15)<<heJEJ->GetBinContent(i)*100.;
+    OutFile<<left<<setw(15)<<heJEU->GetBinContent(i)*100.;
+    OutFile<<left<<setw(15)<<heJER->GetBinContent(i)*100.;
+    OutFile<<endl;
+  }
 
   return;
 }
