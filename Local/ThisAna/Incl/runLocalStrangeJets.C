@@ -16,7 +16,7 @@ const TString  tType[] ={"Kshort", "Lambda", "AntiLa", "Xi", "Omega"};
 
 Bool_t IsMC  = 1;
 Bool_t IsAnaResults  = 1;
-Bool_t IsFd  = 1;
+Bool_t IsFd  = 0;
 Bool_t IsIon = kTRUE;
 
 Bool_t IsJet = 0;
@@ -364,7 +364,7 @@ Bool_t Config(AliAnalysisTaskUserStraneJets *ana, Double_t dcMin, Double_t dcMax
   const Double_t dXiPtBin[] = { 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.4, 1.6, 1.8, 2.0, 2.2, 2.4, 2.6, 2.8, 3.2, 3.7, 4.2, 5.0, 6.0, 8.0};
   const Int_t nXiPtBin = sizeof(dXiPtBin)/sizeof(Double_t) - 1;
 
-  const Double_t dOmegaPtBin[] = { 0.6, 0.8, 1.0, 1.2, 1.6, 2.0, 2.2, 2.4, 2.6, 2.8, 3.2, 3.7, 4.2, 5.0};
+  const Double_t dOmegaPtBin[] = { 0.9, 1.2, 1.6, 2.0, 2.2, 2.4, 2.6, 2.8, 3.2, 3.7, 4.2, 5.0};
   const Int_t nOmegaPtBin = sizeof(dOmegaPtBin)/sizeof(Double_t) - 1;
 
   if (ana->SetKaPtBinning(nKaPtBin, dKaPtBin)) return kFALSE;
