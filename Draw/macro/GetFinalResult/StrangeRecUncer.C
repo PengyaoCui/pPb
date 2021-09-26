@@ -17,6 +17,7 @@ void StrangeRecUncer(const TString sType = "Kshort", const TString CentMin = "0"
   }
   
   if(sType == "Lambda" || sType == "AntiLa"){
+    if( sUncertType == "CompetMass") nCut = 1;
     if( sUncertType == "MLoverP") nCut = 4;
     if( sUncertType == "SigExtrac")nCut = 3;
     if( sUncertType == "Topological")nCut = 4;
@@ -52,6 +53,7 @@ void StrangeRecUncer(const TString sType = "Kshort", const TString CentMin = "0"
   }
   
   if(sType == "Lambda" || sType == "AntiLa"){
+    if(sUncertType == "CompetMass"){ Cut[0] = "Loose"; } 
     if(sUncertType == "MLoverP"){ Cut[0] = "VLoose"; Cut[1] = "Loose"; Cut[2] ="Tight"; Cut[3] ="VTight"; } 
     if(sUncertType == "SigExtrac"){ Cut[0] = "Loose"; Cut[1] = "Tight"; Cut[2] = "VTight";} 
     if(sUncertType == "Topological"){ Cut[0] = "VLoose"; Cut[1] = "Loose"; Cut[2] ="Tight"; Cut[3] = "VTight";} 

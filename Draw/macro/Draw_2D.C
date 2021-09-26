@@ -3,18 +3,19 @@
 TCanvas* makeCanvas(TString sName);
 void Draw_2D(){
 
-  TString sPath[] = {"/home/cuipengyao/study/pPb/Local/ThisAna/NewFd/Incl"};
-  TString sFile[] = {"AnalysisOutputs_LoopIncMC.root"};
-  TString sList[] = {"listLoopIncMC_Lambda_Default_0100"};
-  TString sHist[] = {"hPtLaXi"};
+  TString sPath[] = {"~/Results/pPb/RD/woOOBPileup_wITSorTOF"};
+  TString sFile[] = {"AnalysisResults_RD.root"};
+  TString sList[] = {"AliAnalysisTaskRhoSparse_ _histos"};
+  TString sHist[] = {"fHistRhovsCent"};
 
   auto sLatex("p-Pb at #sqrt{s_{NN}} = 5.02 TeV");
   //-----------------------------------
   TCanvas *can = nullptr;
 
   can = makeCanvas("can");
-  //can->SetLogy();
+  can->SetLogz();
   //can->SetGridx(); can->SetGridy();
+
 
   //-----------------------------------
   auto nHist = sizeof(sHist)/sizeof(TString);
@@ -25,10 +26,10 @@ void Draw_2D(){
     TString sMyHist = sHist[i]; 
     TH2D* h1 = (TH2D*)GetTH2D(sMyPath.Data(), sMyFile.Data(), sMyList.Data(), sMyHist.Data());
     h1->SetName(Form("hist_%d", i));
-    h1->GetYaxis()->SetRangeUser(0.6, 12.);
-    //h1->GetXaxis()->SetRangeUser(0., 12.);
-    h1->GetXaxis()->SetTitle("#it{p}_{T, #Lambda}(GeV/#it{c})");
-    h1->GetYaxis()->SetTitle("#it{p}_{T, #Xi}(GeV/#it{c})");
+    h1->GetYaxis()->SetRangeUser(0., 20.);
+    h1->GetXaxis()->SetRangeUser(0., 100.);
+    h1->GetXaxis()->SetTitle("Multiplicity class (%)");
+    h1->GetYaxis()->SetTitle("#rho_{CMS} (GeV/#it{c}/rad)");
     h1->GetXaxis()->SetLabelSize(0.05);
     h1->GetYaxis()->SetLabelSize(0.05);
 
@@ -37,17 +38,17 @@ void Draw_2D(){
 
     h1->GetXaxis()->SetTitleOffset(1.);
     h1->GetYaxis()->SetTitleOffset(1.);
+    h1->SetTitle("");
     h1->Draw("same colz");
   }
 
   TLatex* tex = new TLatex();
   tex->SetNDC();
   tex->SetTextSizePixels(24);
-  //tex->DrawLatex(0.16, 0.91, sLatex);
-  tex->DrawLatex(0.16, 0.91, "Inclusive Feed-down matrix");
+  tex->DrawLatex(0.16, 0.91, sLatex);
   gStyle->SetOptStat("");
 
-  can->SaveAs("./figure/Lambda_Fd_Matrix.eps");
+  can->SaveAs("./figure/RhoCMSvsCent.eps");
   CanvasEnd(can);
   return;
 }

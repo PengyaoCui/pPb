@@ -3,8 +3,9 @@
 void InclUncer(const TString sType = "Kshort", const TString CentMin = "0", const TString CentMax = "100"){
                
   TString sCut[] = {"MLoverP", "SigExtrac", "Topological", "TPCPID", "TrackQuality", "CompetMass"}; // 
-  if(sType != "Kshort"){sCut[0] = "MLoverP"; sCut[1] = "SigExtrac"; sCut[2] = "Topological", sCut[3] = "TPCPID", sCut[4] = "TrackQuality";} 
-  
+  //if(sType != "Kshort"){sCut[0] = "MLoverP"; sCut[1] = "SigExtrac"; sCut[2] = "Topological", sCut[3] = "TPCPID", sCut[4] = "TrackQuality";} 
+  if(sType == "Xi" || sType == "Omega"){sCut[0] = "MLoverP"; sCut[1] = "SigExtrac"; sCut[2] = "Topological", sCut[3] = "TPCPID", sCut[4] = "TrackQuality";}
+
   TString sPath = "./result"; 
   TString sFile = "StrangeRecUncer.root";
   TString sList =""; //Kshort_Topological_0100
@@ -24,7 +25,8 @@ void InclUncer(const TString sType = "Kshort", const TString CentMin = "0", cons
   leg = new TLegend(0.65,0.85,1.0,0.5); SetLegend(leg);
   //-----------------------------------
   auto nHist = sizeof(sCut)/sizeof(TString);
-  if(sType != "Kshort") nHist = 5;
+  //if(sType != "Kshort") nHist = 5;
+  if(sType == "Xi" || sType == "Omega") nHist = 5;
   const auto nhist = nHist;
 
   TH1D* h1 = nullptr;
@@ -44,10 +46,11 @@ void InclUncer(const TString sType = "Kshort", const TString CentMin = "0", cons
     h1->GetYaxis()->SetRangeUser(0., 0.2);
     if(sType == "Xi" || sType == "Omega")h1->GetYaxis()->SetRangeUser(0., 0.3);
     for(Int_t j = 1; j<=h1->GetNbinsX(); j++){h1->SetBinError(j, 0.);}
-    if(i != (nhist-1) || sType != "Kshort"){
+    //if(i != (nhist-1) || sType != "Kshort"){
+    if(i != (nhist-1) || sType == "Xi" || sType == "Omega"){
       DrawHisto(h1, cLine[i], sMark[i], "same");
     }
-    if(i == nhist-1 && sType == "Kshort"){
+    if(i == nhist-1 && (sType == "Kshort" || sType =="Lambda" || sType == "AntiLa")){
       DrawHisto(h1, cLine[nhist +2 ], sMark[nhist+2], "same");
     }
     SetFrame(h1, "#it{p}_{T}(GeV/#it{c})", "Relative syst.");
@@ -58,15 +61,15 @@ void InclUncer(const TString sType = "Kshort", const TString CentMin = "0", cons
   }
   TH1D* hMaterial = (TH1D*)h1->Clone("hMaterial"); hMaterial->Reset();
   for(Int_t j = 1; j<= h1->GetNbinsX(); j++){hMaterial->SetBinContent(j, 0.04); hMaterial->SetBinError(j, 0);}
-  if(sType != "Kshort")DrawHisto(hMaterial, cLine[nhist+1], sMark[nhist+1], "same");
-  if(sType == "Kshort")DrawHisto(hMaterial, cLine[nhist], sMark[nhist], "same");
+  if(sType  == "Xi" || sType == "Omega")DrawHisto(hMaterial, cLine[nhist+1], sMark[nhist+1], "same");
+  if(sType == "Kshort" || sType =="Lambda" || sType == "AntiLa")DrawHisto(hMaterial, cLine[nhist], sMark[nhist], "same");
   hMaterial->SetLineStyle(2);
   leg->AddEntry(hMaterial, "Material Budget", "l");
  
   hT[nhist]=hMaterial; 
   auto hTotal = (TH1D*)QuadraticSum(nhist+1, hT);
-  if(sType != "Kshort")DrawHisto(hTotal, cLine[nhist], sMark[nhist], "same");
-  if(sType == "Kshort")DrawHisto(hTotal, cLine[nhist-1], sMark[nhist-1], "same");
+  if(sType == "Xi" || sType == "Omega")DrawHisto(hTotal, cLine[nhist], sMark[nhist], "same");
+  if(sType == "Kshort" || sType =="Lambda" || sType == "AntiLa")DrawHisto(hTotal, cLine[nhist-1], sMark[nhist-1], "same");
   SetFrame(hTotal, "#it{p}_{T}(GeV/#it{c})", "Relative syst.");
   leg->AddEntry(hTotal, "Total","l");
   OutFile<<left<<setw(15)<<"Material";

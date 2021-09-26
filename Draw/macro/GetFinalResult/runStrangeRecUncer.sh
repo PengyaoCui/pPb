@@ -33,6 +33,10 @@ for i in \
   "\"Kshort\"","\"0\"","\"10\"","\"TrackQuality\"" \
   "\"Kshort\"","\"10\"","\"40\"","\"TrackQuality\"" \
   "\"Kshort\"","\"40\"","\"100\"","\"TrackQuality\"" \
+  "\"Lambda\"","\"0\"","\"100\"","\"CompetMass\"" \
+  "\"Lambda\"","\"0\"","\"10\"","\"CompetMass\"" \
+  "\"Lambda\"","\"10\"","\"40\"","\"CompetMass\"" \
+  "\"Lambda\"","\"40\"","\"100\"","\"CompetMass\"" \
   "\"Lambda\"","\"0\"","\"100\"","\"MLoverP\"" \
   "\"Lambda\"","\"0\"","\"10\"","\"MLoverP\"" \
   "\"Lambda\"","\"10\"","\"40\"","\"MLoverP\"" \
@@ -53,6 +57,10 @@ for i in \
   "\"Lambda\"","\"0\"","\"10\"","\"TrackQuality\"" \
   "\"Lambda\"","\"10\"","\"40\"","\"TrackQuality\"" \
   "\"Lambda\"","\"40\"","\"100\"","\"TrackQuality\"" \
+  "\"AntiLa\"","\"0\"","\"100\"","\"CompetMass\"" \
+  "\"AntiLa\"","\"0\"","\"10\"","\"CompetMass\"" \
+  "\"AntiLa\"","\"10\"","\"40\"","\"CompetMass\"" \
+  "\"AntiLa\"","\"40\"","\"100\"","\"CompetMass\"" \
   "\"AntiLa\"","\"0\"","\"100\"","\"MLoverP\"" \
   "\"AntiLa\"","\"0\"","\"10\"","\"MLoverP\"" \
   "\"AntiLa\"","\"10\"","\"40\"","\"MLoverP\"" \
